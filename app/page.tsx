@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
+import { KnowFirsthand } from "@/components/sections/KnowFirsthand";
 import { AboutBrief } from "@/components/sections/AboutBrief";
 import { PracticeAreas } from "@/components/sections/PracticeAreas";
 import { Process } from "@/components/sections/Process";
 import { LawyerSpotlight } from "@/components/sections/LawyerSpotlight";
+import { WhyMe } from "@/components/sections/WhyMe";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { ContactForm } from "@/components/sections/ContactForm";
@@ -36,10 +38,12 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <KnowFirsthand />
         <AboutBrief />
         <PracticeAreas />
         <Process />
         <LawyerSpotlight />
+        <WhyMe />
         <Testimonials />
         <FAQ />
         <ContactForm />
