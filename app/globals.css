@@ -6,6 +6,8 @@
 
 @theme {
   --font-heebo: "Heebo", system-ui, sans-serif;
+  --font-allura: "Allura", "Great Vibes", "Dancing Script", cursive;
+  --font-script: "Allura", "Great Vibes", "Dancing Script", cursive;
   --color-navy: #222439;
   --color-navy-ink: #222439;
   --color-navy-mid: #2b2e47;
