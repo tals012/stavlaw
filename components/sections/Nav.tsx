@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import navLogoMark from "@/figma-assets/nav-logo-mark.svg";
 
 const links = [
@@ -40,7 +41,7 @@ export function Nav() {
         </ul>
 
         {/* RIGHT side (RTL: end) — logo mark */}
-        <a href="/" aria-label="עמוד הבית" className="shrink-0">
+        <Link href="/" aria-label="עמוד הבית" className="shrink-0">
           <Image
             src={navLogoMark}
             alt="SE logo"
@@ -48,7 +49,7 @@ export function Nav() {
             height={52}
             className="block"
           />
-        </a>
+        </Link>
       </nav>
     </header>
   );

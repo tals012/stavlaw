@@ -102,6 +102,7 @@ export function ContactForm() {
                 id="name"
                 {...register("name")}
                 placeholder="שם מלא*"
+                aria-label="שם מלא"
                 aria-invalid={!!errors.name}
                 className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d]"
               />
@@ -113,6 +114,7 @@ export function ContactForm() {
                 inputMode="tel"
                 {...register("phone")}
                 placeholder="טלפון*"
+                aria-label="טלפון"
                 aria-invalid={!!errors.phone}
                 className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d]"
               />
@@ -127,6 +129,7 @@ export function ContactForm() {
               type="email"
               {...register("email")}
               placeholder="דואר אלקטרוני*"
+              aria-label="אימייל"
               aria-invalid={!!errors.email}
               className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d]"
             />
@@ -140,6 +143,7 @@ export function ContactForm() {
               rows={5}
               {...register("message")}
               placeholder="*איך אני יכולה לעזור?"
+              aria-label="הודעה"
               aria-invalid={!!errors.message}
               className="w-full bg-[#222439] border border-white rounded-[30px] px-6 py-4 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d] resize-none"
             />
