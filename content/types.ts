@@ -14,7 +14,12 @@ export type ProcessStep = { n: number; title: string; blurb: string };
 export type SiteContent = {
   brand: { name: string; initials: string };
   hero: { h1: string; sub: string; ctaLabel: string };
-  about: { paragraphs: string[]; portraitAlt: string };
+  about: {
+    paragraphs: string[];
+    portraitAlt: string;
+    scriptEyebrow?: string;
+    introParagraph?: string;
+  };
   practiceAreas: PracticeArea[];
   process: ProcessStep[];
   spotlight: { headline: string; body: string; ctaLabel: string };
@@ -34,6 +39,11 @@ export type SiteContent = {
     siteName: string;
     tagline: string;
     defaultDescription: string;
+  };
+  whyMe?: {
+    cards: Array<{ n: string; title: string; body: string }>;
+    heading: string;
+    paragraphs: string[];
   };
   features: {
     whatsappFloat: boolean;
