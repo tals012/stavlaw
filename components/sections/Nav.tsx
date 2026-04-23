@@ -1,29 +1,37 @@
 "use client";
 
-import Link from "next/link";
-import { site } from "@/content/site";
+import Image from "next/image";
+import navLogoMark from "@/figma-assets/nav-logo-mark.svg";
 
 const links = [
   { href: "#about", label: "קצת עלי" },
   { href: "#practice-areas", label: "מעטפת משפטית" },
   { href: "#process", label: "איך עובד התהליך?" },
   { href: "#spotlight", label: "למה אני?" },
-  { href: "#testimonials", label: "דוגמאות מהעולם האמיתי" },
+  { href: "#testimonials", label: "דוגמאות" },
   { href: "#faq", label: "שאלות נפוצות" },
-  { href: "#contact", label: "יצירת קשר" },
 ];
 
 export function Nav() {
   return (
-    <header className="fixed start-0 end-0 top-0 z-50 h-[84px] backdrop-blur-md bg-[#222439]/90">
-      <nav className="mx-auto flex max-w-[1920px] h-full items-center justify-between px-16">
-        {/* Nav links — start side in RTL = left */}
-        <ul className="hidden items-center gap-8 lg:flex">
+    <header className="fixed start-0 end-0 top-0 z-50 h-[84px] bg-cream-100/90 backdrop-blur-sm border-b border-cream-200">
+      <nav className="mx-auto flex max-w-[1280px] h-full items-center justify-between px-6 lg:px-10">
+
+        {/* LEFT side (RTL: start) — CTA button */}
+        <a
+          href="#contact"
+          className="shrink-0 rounded-full bg-peach border-2 border-peach px-5 py-2 text-[15px] font-bold text-text-dark hover:bg-peach-600 hover:border-peach-600 transition-colors"
+        >
+          צור קשר
+        </a>
+
+        {/* CENTER — nav links */}
+        <ul className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-[18px] text-white hover:text-[#e79c7d] transition-colors whitespace-nowrap"
+                className="text-[15px] text-navy hover:text-peach transition-colors whitespace-nowrap font-medium"
               >
                 {l.label}
               </a>
@@ -31,17 +39,16 @@ export function Nav() {
           ))}
         </ul>
 
-        {/* Logo wordmark — end side in RTL = right */}
-        <Link href="/" aria-label={site.brand.name} className="flex items-end gap-3 shrink-0">
-          <div className="text-end">
-            <div className="text-[12px] font-bold text-white leading-tight">
-              <div>stav</div>
-              <div>eliyahu</div>
-              <div>shukrun</div>
-            </div>
-            <div className="text-[10px] text-white tracking-[2px] uppercase mt-0.5">Lawyer</div>
-          </div>
-        </Link>
+        {/* RIGHT side (RTL: end) — logo mark */}
+        <a href="/" aria-label="עמוד הבית" className="shrink-0">
+          <Image
+            src={navLogoMark}
+            alt="SE logo"
+            width={52}
+            height={52}
+            className="block"
+          />
+        </a>
       </nav>
     </header>
   );
