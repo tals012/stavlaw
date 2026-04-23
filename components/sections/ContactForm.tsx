@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { site } from "@/content/site";
 import { contactSchema, type ContactInput } from "@/lib/contact-schema";
+import { Script } from "@/components/ui/Script";
 import Image from "next/image";
 import aboutPortrait from "@/figma-assets/about-portrait.jpg";
 import whatsappIcon from "@/figma-assets/whatsapp-icon.svg";
@@ -55,16 +56,15 @@ export function ContactForm() {
       {/* Center dark panel */}
       <div className="relative mx-auto max-w-3xl bg-[#222439] py-16 px-10 min-h-[1060px] flex flex-col items-center justify-center">
         {/* Contact Me script */}
-        <p
-          className="font-['Angelic_Bonques_Script',cursive,serif] text-[50px] text-[#e79c7d] leading-[1.078] rotate-[-6.05deg] select-none mb-4"
-          style={{ fontFamily: "'Angelic Bonques Script', cursive" }}
-        >
+        <Script className="text-[clamp(2.5rem,3.5vw,54px)] leading-none block mb-4">
           Contact Me
-        </p>
+        </Script>
 
         {/* Heading */}
-        <h2 className="text-[45px] font-bold text-white leading-[1.173] text-center whitespace-pre-line">
-          {`לשיחת ייעוץ\n השאירו פרטים עכשיו`}
+        <h2 className="text-[clamp(2rem,3vw,45px)] font-bold text-white leading-[1.173] text-center">
+          לשיחת ייעוץ
+          <br />
+          השאירו פרטים עכשיו
         </h2>
         <p className="mt-4 text-[16px] text-white/80 text-center max-w-sm leading-[1.371]">
           {site.contact.sub}
