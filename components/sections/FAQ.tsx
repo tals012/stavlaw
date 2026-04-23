@@ -1,52 +1,58 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { site } from "@/content/site";
+import { Script } from "@/components/ui/Script";
+import Image from "next/image";
+import faqOpen from "@/figma-assets/faq-open.svg";
+import faqClosed from "@/figma-assets/faq-closed.svg";
 
 export function FAQ() {
   return (
-    <section id="faq" className="bg-[#f4f0eb] py-20">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="faq" className="bg-cream-100 py-20">
+      <div className="mx-auto max-w-4xl px-6">
+
         {/* Heading */}
         <div className="text-center mb-14">
-          <p
-            className="font-['Angelic_Bonques_Script',cursive,serif] text-[60px] text-[#222439] leading-[1.078] rotate-[-8.98deg] inline-block select-none mb-2"
-            style={{ fontFamily: "'Angelic Bonques Script', cursive" }}
-          >
+          <Script className="text-[clamp(2.5rem,4vw,64px)] leading-none block mb-3">
             FAQ
-          </p>
-          <h2 className="text-[70px] font-bold text-[#222439] leading-[1.173]">
+          </Script>
+          <h2 className="text-[clamp(2rem,3.5vw,60px)] font-bold text-navy leading-[1.173]">
             שאלות נפוצות
           </h2>
         </div>
 
-        {/* Accordion — navy rounded pills */}
-        <Accordion className="space-y-4">
+        {/* Accordion */}
+        <Accordion className="space-y-3">
           {site.faq.map((item, i) => (
             <AccordionItem
               key={i}
               value={`faq-${i}`}
-              className="border-2 border-[#222439] rounded-[200px] px-8 data-[state=open]:rounded-[30px] transition-all overflow-hidden"
+              className="border-2 border-navy rounded-full px-8 py-1 data-[state=open]:rounded-[30px] transition-all overflow-hidden"
             >
-              <AccordionTrigger className="text-[25px] font-medium text-[#222439] text-end py-5 hover:no-underline [&>svg]:hidden">
-                {item.q}
+              <AccordionTrigger className="text-[clamp(1rem,1.4vw,22px)] font-medium text-navy text-end py-5 hover:no-underline [&>svg]:hidden flex items-center justify-between w-full gap-4">
+                <span className="flex-1 text-end">{item.q}</span>
+                {/* Custom toggle icons */}
+                <span className="shrink-0 data-[state=open]:hidden">
+                  <Image src={faqClosed} alt="" width={24} height={24} />
+                </span>
+                <span className="shrink-0 hidden data-[state=open]:block">
+                  <Image src={faqOpen} alt="" width={24} height={24} />
+                </span>
               </AccordionTrigger>
-              <AccordionContent className="text-[18px] text-[#222439]/80 text-end pb-6">
+              <AccordionContent className="text-[16px] text-navy/75 text-end pb-5 leading-relaxed">
                 {item.a}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
 
-        {/* CTA below FAQ */}
-        <div className="mt-20 text-center">
-          <h3 className="text-[50px] font-bold text-[#222439] leading-[1.173]">
-            לא עניתי לך על השאלה?
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <h3 className="text-[clamp(1.5rem,2.5vw,42px)] font-bold text-navy leading-[1.173]">
+            לא עניתי לך על השאלה?{" "}
+            <a href="#contact" className="text-peach hover:underline">
+              בואו נדבר
+            </a>
           </h3>
-          <a
-            href="#contact"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-[#e79c7d] border-2 border-[#e79c7d] px-8 py-4 text-[20px] font-bold text-[#222439] hover:bg-[#d4845f] hover:border-[#d4845f] transition-colors"
-          >
-            בואו נדבר
-          </a>
         </div>
       </div>
     </section>
