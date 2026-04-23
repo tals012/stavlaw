@@ -2,34 +2,23 @@ import { site } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-ink py-10 text-cream-100/80">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div>
-            <h3 className="text-lg font-bold text-cream-100">{site.brand.name}</h3>
-            <p className="mt-2 text-sm">{site.seo.tagline}</p>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold uppercase text-cream-100">יצירת קשר</h4>
-            <ul className="mt-2 space-y-1 text-sm">
-              <li><a href={`tel:${site.contact.phoneIntl}`} className="hover:text-peach"><bdi>{site.contact.phoneDisplay}</bdi></a></li>
-              <li><a href={`mailto:${site.contact.email}`} className="hover:text-peach"><bdi>{site.contact.email}</bdi></a></li>
-              <li>{site.contact.address.street}, {site.contact.address.city}</li>
-              <li>{site.contact.hours}</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold uppercase text-cream-100">מידע</h4>
-            <ul className="mt-2 space-y-1 text-sm">
-              <li><a href="#practice-areas" className="hover:text-peach">תחומי התמחות</a></li>
-              <li><a href="#faq" className="hover:text-peach">שאלות נפוצות</a></li>
-              <li><a href="#contact" className="hover:text-peach">צור קשר</a></li>
-            </ul>
+    <footer className="bg-[#222439] py-6">
+      <div className="mx-auto max-w-[1920px] px-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 text-[#f4f0eb] text-[18px]">
+          {/* Right: brand name */}
+          <span className="font-medium">{site.brand.name}</span>
+
+          {/* Center: legal links */}
+          <span className="font-medium">תקנון האתר | הצהרת פרטיות</span>
+
+          {/* Left: copyright + rights */}
+          <div className="flex items-center gap-6">
+            <span className="font-medium">כל הזכויות שמורות | 2026</span>
+            <span className="font-medium text-[16px] text-[#f4f0eb]/80">
+              © {site.seo.siteName}
+            </span>
           </div>
         </div>
-        <p className="mt-10 border-t border-cream-100/10 pt-5 text-center text-xs">
-          © {new Date().getFullYear()} {site.seo.siteName}. כל הזכויות שמורות.
-        </p>
       </div>
     </footer>
   );

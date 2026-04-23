@@ -1,47 +1,60 @@
 import Image from "next/image";
 import { site } from "@/content/site";
-import laborImg from "@/figma-assets/area-labor.jpg";
-import civilImg from "@/figma-assets/area-civil.jpg";
-import realEstateImg from "@/figma-assets/area-real-estate.jpg";
-import executionImg from "@/figma-assets/area-execution.jpg";
-import trafficImg from "@/figma-assets/area-traffic.jpg";
-import corporateImg from "@/figma-assets/area-corporate.jpg";
+import shieldIcon from "@/figma-assets/shield-icon.svg";
+import heroPortrait from "@/figma-assets/hero-portrait.jpg";
 
-const imgMap = {
-  labor: laborImg,
-  civil: civilImg,
-  "real-estate": realEstateImg,
-  execution: executionImg,
-  traffic: trafficImg,
-  corporate: corporateImg,
-} as const;
+// All 6 cards use the same stock image for now (the Figma uses imgRectangle164 for all)
+const cardImage = heroPortrait;
 
 export function PracticeAreas() {
   return (
-    <section id="practice-areas" className="bg-navy py-20 text-cream-100">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="text-center">
-          <span className="text-sm font-semibold uppercase tracking-widest text-peach">תחומי התמחות</span>
-          <h2 className="mt-2 text-3xl font-black md:text-4xl">מגוון רחב של שירותים משפטיים</h2>
+    <section id="practice-areas" className="bg-[#222439] py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Section heading */}
+        <div className="text-center mb-14">
+          <p className="font-['Angelic_Bonques_Script',cursive,serif] text-[60px] text-[#e79c7d] leading-[1.078] rotate-[-3.49deg] inline-block select-none mb-2"
+            style={{ fontFamily: "'Angelic Bonques Script', cursive" }}>
+            Legal assistance
+          </p>
+          <h2 className="text-[53px] font-bold text-white leading-[1.116]">
+            מעטפת ליווי משפטית לשכירים
+          </h2>
+          <p className="mt-3 text-[20px] text-white/80 max-w-2xl mx-auto">
+            ייצוג מקצועי ואישי בכל שלבי ההליך המשפטי מול המעסיק
+          </p>
         </div>
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+        {/* 2-column × 3-row grid of cards */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {site.practiceAreas.map((area) => (
-            <li key={area.slug}>
-              <article className="group h-full overflow-hidden rounded-2xl bg-cream-100/5 backdrop-blur transition-transform hover:-translate-y-1 hover:bg-cream-100/10">
+            <article
+              key={area.slug}
+              className="bg-[#2b2e47] rounded-[20px] overflow-hidden relative group hover:-translate-y-1 transition-transform"
+            >
+              {/* Card image */}
+              <div className="relative h-[260px] overflow-hidden rounded-[10px] mx-4 mt-4" >
                 <Image
-                  src={imgMap[area.slug]}
+                  src={cardImage}
                   alt={area.imageAlt}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="aspect-[4/3] w-full object-cover"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
                 />
-                <div className="p-5">
-                  <h3 className="text-lg font-bold">{area.title}</h3>
-                  <p className="mt-2 text-sm text-cream-100/70">{area.blurb}</p>
-                </div>
-              </article>
-            </li>
+              </div>
+
+              {/* Shield icon badge */}
+              <div className="absolute top-6 end-6 w-[47px] h-[47px] border border-[#e79c7d] rounded-[10px] flex items-center justify-center bg-[#2b2e47]">
+                <Image src={shieldIcon} alt="" width={20} height={20} />
+              </div>
+
+              {/* Text */}
+              <div className="px-5 pb-6 pt-2">
+                <h3 className="text-[30px] font-bold text-white leading-[1.116]">{area.title}</h3>
+                <p className="mt-2 text-[16px] text-white/80 leading-relaxed">{area.blurb}</p>
+              </div>
+            </article>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
