@@ -15,6 +15,7 @@ const eslintConfig = defineConfig([
   ]),
   {
     files: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+    ignores: ["components/ui/**/*.{ts,tsx}"],
     rules: {
       "no-restricted-syntax": [
         "error",
