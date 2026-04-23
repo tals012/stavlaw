@@ -10,11 +10,12 @@ describe("sendContactEmail", () => {
     );
     expect(r.ok).toBe(true);
     expect(send).toHaveBeenCalledOnce();
-    const call = send.mock.calls[0][0];
-    expect(call.to).toBe("s@stavlaw.co.il");
-    expect(call.from).toBe("noreply@stavlaw.co.il");
-    expect(call.reply_to).toBe("d@x.com");
-    expect(call.subject).toContain("דנה");
-    expect(call.html).toContain("שלום");
+    const call = send.mock.calls[0]?.[0];
+    expect(call).toBeDefined();
+    expect(call!.to).toBe("s@stavlaw.co.il");
+    expect(call!.from).toBe("noreply@stavlaw.co.il");
+    expect(call!.reply_to).toBe("d@x.com");
+    expect(call!.subject).toContain("דנה");
+    expect(call!.html).toContain("שלום");
   });
 });
