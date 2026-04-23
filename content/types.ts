@@ -1,8 +1,8 @@
 export type PracticeArea = {
-  slug: "labor" | "civil" | "real-estate" | "execution" | "traffic" | "corporate";
-  title: string;       // TODO: final Hebrew title
-  blurb: string;       // TODO: 1-2 sentences
-  imageAlt: string;    // Hebrew alt text
+  slug: "labor" | "civil" | "real-estate" | "execution" | "traffic" | "corporate" | "hearing" | "harassment" | "injunction" | "rights";
+  title: string;
+  blurb: string;
+  imageAlt: string;
 };
 
 export type FAQItem = { q: string; a: string };
