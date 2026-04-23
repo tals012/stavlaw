@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# stavlaw
 
-## Getting Started
+Landing page for משרד עו"ד סתיו שוקרון. Next.js 16, RTL Hebrew, deployed on Vercel.
 
-First, run the development server:
+## Develop
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Test
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm test          # unit (vitest)
+npm run test:e2e  # end-to-end (Playwright)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
+Push to `main` → Vercel auto-deploys production. Any branch → preview (noindexed via `middleware.ts`).
 
-To learn more about Next.js, take a look at the following resources:
+## Environment variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See `.env.example`. Required for production:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `RESEND_API_KEY` (and a verified sender domain in the Resend dashboard)
+- `TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY`
+- `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN`
+- `NEXT_PUBLIC_SITE_URL`
+- `NEXT_PUBLIC_GA4_ID`
+- `NEXT_PUBLIC_GSC_VERIFICATION`
 
-## Deploy on Vercel
+## Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All visible copy lives in `content/site.ts`. Replace every `TODO:` before launch.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Search Console setup
+
+1. Set `NEXT_PUBLIC_GSC_VERIFICATION` to the meta-tag token from https://search.google.com/search-console
+2. Deploy to production
+3. Verify ownership, then submit `/sitemap.xml`
+
+## Resend domain setup
+
+1. Add your domain in the Resend dashboard (https://resend.com/domains)
+2. Configure the DNS records Resend provides (SPF + DKIM + return-path)
+3. Set `CONTACT_FROM_EMAIL` to an address on that domain
