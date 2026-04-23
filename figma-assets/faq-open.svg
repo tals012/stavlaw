@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 59.9651 59.9651" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 35138">
+<circle id="Ellipse 22" cx="29.9825" cy="29.9825" r="29.9825" fill="var(--fill-0, #222439)"/>
+<g id="Group 35128">
+<g id="Line 69">
+<line x1="20.3935" y1="24.7256" x2="30.434" y2="34.7661" stroke="var(--stroke-0, white)" stroke-width="2" stroke-linecap="round"/>
+<line x1="20.3935" y1="24.7256" x2="30.434" y2="34.7661" stroke="var(--stroke-1, white)" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g id="Line 70">
+<line x1="1" y1="-1" x2="15.1995" y2="-1" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 29.5312 35.2393)" stroke="var(--stroke-0, white)" stroke-width="2" stroke-linecap="round"/>
+<line x1="1" y1="-1" x2="15.1995" y2="-1" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 29.5312 35.2393)" stroke="var(--stroke-1, white)" stroke-width="2" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>
