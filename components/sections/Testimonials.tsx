@@ -36,21 +36,9 @@ export function Testimonials() {
             {items.map((t, idx) => (
               <article
                 key={idx}
-                className="w-full shrink-0 bg-navy rounded-[20px] grid grid-cols-1 md:grid-cols-[380px_1fr] overflow-hidden"
+                className="w-full shrink-0 bg-navy rounded-[20px] grid grid-cols-1 md:grid-cols-[1fr_380px] overflow-hidden"
               >
-                {/* Photo — visual left */}
-                <div className="relative min-h-[300px] md:min-h-[440px]">
-                  <Image
-                    src={caseStudy}
-                    alt={t.caseType}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className="object-cover grayscale"
-                  />
-                  <div className="absolute inset-0 bg-navy/30" />
-                </div>
-
-                {/* Case text — visual right */}
+                {/* Case text — FIRST in DOM → visual RIGHT in RTL */}
                 <div className="p-10 flex flex-col justify-center text-end gap-4">
                   <div>
                     <p className="text-peach text-[22px] font-bold">{t.author} |</p>
@@ -60,6 +48,18 @@ export function Testimonials() {
                   <p className="text-white text-[18px] leading-[1.5]">
                     &quot;{t.quote}&quot;
                   </p>
+                </div>
+
+                {/* Photo — SECOND in DOM → visual LEFT in RTL */}
+                <div className="relative min-h-[300px] md:min-h-[440px]">
+                  <Image
+                    src={caseStudy}
+                    alt={t.caseType}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 380px"
+                    className="object-cover grayscale"
+                  />
+                  <div className="absolute inset-0 bg-navy/30" />
                 </div>
               </article>
             ))}

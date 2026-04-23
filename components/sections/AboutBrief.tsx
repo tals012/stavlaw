@@ -6,24 +6,10 @@ import lawyerPhoto from "@/figma-assets/lawyer-photo.jpg";
 export function AboutBrief() {
   return (
     <section id="about" className="bg-cream-100 py-20">
-      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1fr_1.2fr]">
+      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1.8fr_1fr]">
 
-        {/* Portrait — visual LEFT (in RTL: order-last = renders on left side visually) */}
-        <div
-          className="relative rounded-[20px] overflow-hidden shadow-xl order-2 md:order-1"
-          style={{ minHeight: "560px" }}
-        >
-          <Image
-            src={lawyerPhoto}
-            alt={site.about.portraitAlt}
-            fill
-            sizes="(max-width: 768px) 100vw, 40vw"
-            className="object-cover object-top"
-          />
-        </div>
-
-        {/* Bio — visual RIGHT (RTL: order-first = renders on right side) */}
-        <div className="py-4 order-1 md:order-2 text-end">
+        {/* Bio — FIRST in DOM → visual RIGHT in RTL */}
+        <div className="py-4 text-end">
           <p className="text-[22px] text-navy leading-[1.116]">נעים מאוד,</p>
           <h2 className="text-[38px] font-bold text-navy leading-[1.116] mt-1">
             עו&quot;ד סתיו אליהו שוקרון
@@ -49,6 +35,19 @@ export function AboutBrief() {
               Stav Eliyahu Shokron.
             </Script>
           </div>
+        </div>
+
+        {/* Portrait — SECOND in DOM → visual LEFT in RTL */}
+        <div
+          className="relative rounded-[20px] overflow-hidden shadow-xl aspect-[3/4] w-full max-w-[360px] justify-self-start"
+        >
+          <Image
+            src={lawyerPhoto}
+            alt={site.about.portraitAlt}
+            fill
+            sizes="(max-width: 768px) 100vw, 360px"
+            className="object-cover object-top"
+          />
         </div>
       </div>
     </section>

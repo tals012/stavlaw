@@ -8,22 +8,8 @@ export function LawyerSpotlight() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-          {/* Image — visual LEFT (RTL: order-last = left side on desktop) */}
-          <div
-            className="relative rounded-[20px] overflow-hidden order-2 md:order-1"
-            style={{ minHeight: "480px" }}
-          >
-            <Image
-              src={lawyerPhoto}
-              alt={site.about.portraitAlt}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-top"
-            />
-          </div>
-
-          {/* Text — visual RIGHT (RTL: order-first = right side) */}
-          <div className="order-1 md:order-2 text-end">
+          {/* Text — FIRST in DOM → visual RIGHT in RTL */}
+          <div className="text-end">
             <h2
               className="font-bold text-white leading-[1.173]"
               style={{ fontSize: "clamp(2rem, 3.2vw, 48px)" }}
@@ -39,6 +25,19 @@ export function LawyerSpotlight() {
             >
               {site.spotlight.ctaLabel}
             </a>
+          </div>
+
+          {/* Image — SECOND in DOM → visual LEFT in RTL */}
+          <div
+            className="relative rounded-[20px] overflow-hidden aspect-[4/3] w-full"
+          >
+            <Image
+              src={lawyerPhoto}
+              alt={site.about.portraitAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-top"
+            />
           </div>
         </div>
       </div>
