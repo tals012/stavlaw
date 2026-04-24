@@ -50,17 +50,12 @@ export function Nav() {
 
   return (
     <header className="absolute start-0 end-0 top-0 z-50">
-      <nav className="relative mx-auto flex max-w-[1400px] items-center justify-between px-6 md:px-8 pt-5 pb-4 md:pt-6">
-        {/* Visual-start slot: LanguageSwitcher */}
-        <div className="flex items-center gap-2 md:gap-3">
-          <LanguageSwitcher />
-        </div>
-
-        {/* Centered logo — absolutely positioned so side content can't pull it off-center */}
+      <nav className="relative mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 md:px-8 pt-5 pb-4 md:pt-6">
+        {/* Visual-right in RTL (DOM first): Logo */}
         <Link
           href="/"
           aria-label="עמוד הבית"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center shrink-0 pointer-events-auto"
+          className="flex items-center shrink-0"
         >
           <Image
             src="/stav-logo.svg"
@@ -72,29 +67,29 @@ export function Nav() {
           />
         </Link>
 
-        {/* Visual-end slot: Desktop links OR mobile hamburger */}
-        <div className="flex items-center">
-          {/* Desktop links */}
-          <ul className="hidden items-center gap-7 lg:flex">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className={`text-[15px] text-white hover:text-peach transition-colors whitespace-nowrap ${
-                    l.active ? "underline decoration-peach decoration-2 underline-offset-[8px]" : ""
-                  }`}
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        {/* Center: Desktop links */}
+        <ul className="hidden flex-1 items-center justify-center gap-7 lg:flex">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                className={`text-[15px] text-white hover:text-peach transition-colors whitespace-nowrap ${
+                  l.active ? "underline decoration-peach decoration-2 underline-offset-[8px]" : ""
+                }`}
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-          {/* Mobile hamburger - visible below lg */}
+        {/* Visual-left in RTL (DOM last): LanguageSwitcher + mobile hamburger */}
+        <div className="flex items-center gap-2 md:gap-3">
+          <LanguageSwitcher />
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
-            aria-label={dict.nav.about /* labelled via sr-only below */}
+            aria-label="תפריט"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-white hover:bg-white/10 transition-colors"

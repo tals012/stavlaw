@@ -12,6 +12,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppFloat } from "@/components/sections/WhatsAppFloat";
+import { QuizLauncher } from "@/components/quiz/QuizLauncher";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { JsonLd } from "@/components/schema/JsonLd";
 import {
@@ -28,6 +29,7 @@ export const metadata: Metadata = landingMetadata();
 
 export default function Home() {
   const ctx = { baseUrl: baseUrl() };
+  const quizEnabled = process.env.NEXT_PUBLIC_ENABLE_QUIZ === "true";
   return (
     <>
       <JsonLd data={buildAttorney(ctx)} />
@@ -46,6 +48,7 @@ export default function Home() {
         <FadeInSection><LawyerSpotlight /></FadeInSection>
         <FadeInSection><WhyMe /></FadeInSection>
         <FadeInSection><Testimonials /></FadeInSection>
+        {quizEnabled && <FadeInSection><QuizLauncher /></FadeInSection>}
         <FadeInSection><FAQ /></FadeInSection>
         <FadeInSection><ContactForm /></FadeInSection>
       </main>
