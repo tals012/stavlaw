@@ -4,7 +4,7 @@ import { Script } from "@/components/ui/Script";
 export function Process() {
   return (
     <section id="process" className="bg-cream-100 py-20">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
 
         {/* Heading — right-aligned in RTL (default text-align: start = right) */}
         <div className="mb-16">

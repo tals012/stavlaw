@@ -5,11 +5,11 @@ import heroPortrait from "@/figma-assets/hero-portrait.png";
 
 export function Hero() {
   return (
-    <section className="relative bg-navy min-h-screen overflow-hidden text-white">
+    <section className="relative bg-navy min-h-[1080px] overflow-hidden text-white">
       {/* top peach accent bar */}
       <div className="absolute start-0 end-0 top-0 h-[3px] bg-peach" />
 
-      <div className="mx-auto w-full max-w-[1600px] px-[clamp(1rem,4vw,4rem)] pt-40 pb-16 grid gap-10 md:grid-cols-[1.3fr_1fr] items-center">
+      <div className="mx-auto w-full max-w-[1600px] px-[clamp(1rem,4vw,4rem)] pt-32 pb-16 grid gap-10 md:grid-cols-[1.3fr_1fr] items-center">
         {/* RIGHT col (RTL: 1st child) — text block. In RTL, block default is text-start = right, so NO text-end. */}
         <div className="w-full">
           <h1

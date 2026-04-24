@@ -8,7 +8,7 @@ import faqClosed from "@/figma-assets/faq-closed.svg";
 export function FAQ() {
   return (
     <section id="faq" className="bg-cream-100 py-20">
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
 
         {/* Heading */}
         <div className="text-center mb-14">
