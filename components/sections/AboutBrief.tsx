@@ -25,15 +25,16 @@ export function AboutBrief() {
             ))}
           </div>
 
-          {/* CTA on visual-right, signature on visual-left — in RTL flex row, first child is visual-right */}
-          <div className="mt-8 flex items-center justify-between">
+          {/* CTA on visual-right, signature on visual-left — in RTL flex row, first child is visual-right.
+              On mobile, stack vertically (signature above button) to avoid collision. */}
+          <div className="mt-8 flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between md:gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-peach border-2 border-peach px-8 py-3 text-[18px] font-bold text-text-dark hover:bg-peach-600 hover:border-peach-600 transition-colors"
+              className="order-2 inline-flex items-center justify-center rounded-full bg-peach border-2 border-peach px-8 py-3 text-[18px] font-bold text-text-dark hover:bg-peach-600 hover:border-peach-600 transition-colors md:order-1"
             >
               {dict.hero.ctaLabel}
             </a>
-            <Script className="text-[clamp(2rem,2.5vw,44px)] text-text-mid leading-none">
+            <Script className="order-1 text-[clamp(2rem,2.5vw,44px)] text-text-mid leading-none md:order-2">
               {dict.about.signature}
             </Script>
           </div>
