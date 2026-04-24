@@ -174,12 +174,17 @@ export function QuizModal({ open, onClose }: { open: boolean; onClose: () => voi
             <div className="flex-1 overflow-y-auto px-6 py-6">
               {done ? (
                 <SuccessView onClose={onClose} />
-              ) : isQuestionStep ? (
-                <QuestionStep
-                  step={STEPS[step]}
-                  selected={answers[STEPS[step].key]}
-                  onSelect={(v) => selectAnswer(STEPS[step].key, v as never)}
-                />
+              ) : isQuestionStep && STEPS[step] ? (
+                (() => {
+                  const current = STEPS[step]!;
+                  return (
+                    <QuestionStep
+                      step={current}
+                      selected={answers[current.key]}
+                      onSelect={(v) => selectAnswer(current.key, v as never)}
+                    />
+                  );
+                })()
               ) : (
                 <ContactStep
                   contact={contact}
@@ -206,7 +211,7 @@ export function QuizModal({ open, onClose }: { open: boolean; onClose: () => voi
                 <p className="text-[13px] text-white/50">
                   שלב {Math.min(step + 1, TOTAL_STEPS)} מתוך {TOTAL_STEPS}
                 </p>
-                {isQuestionStep && answers[STEPS[step].key] ? (
+                {isQuestionStep && STEPS[step] && answers[STEPS[step].key] ? (
                   <button
                     type="button"
                     onClick={() => setStep((s) => Math.min(s + 1, TOTAL_STEPS - 1))}

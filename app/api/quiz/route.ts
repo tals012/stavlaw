@@ -85,7 +85,7 @@ export async function POST(req: Request) {
   const { data: sent, error } = await client.emails.send({
     from,
     to,
-    reply_to: data.email,
+    replyTo: data.email,
     subject: `שאלון סינון חדש - ${data.name}`,
     html: buildHtml(data),
     text: buildText(data),
