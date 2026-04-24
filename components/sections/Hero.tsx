@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Script } from "@/components/ui/Script";
 import { HeroPills } from "@/components/sections/HeroPills";
+import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 import heroPortrait from "@/figma-assets/hero-portrait.png";
 
@@ -52,12 +53,9 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Scroll indicator — below the CTA, right-aligned */}
-          <div className="mt-8 text-peach/80">
-            <svg width="20" height="32" viewBox="0 0 20 32" fill="none" aria-hidden="true" className="inline-block">
-              <rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" strokeWidth="1.5" />
-              <circle cx="10" cy="9" r="2" fill="currentColor" />
-            </svg>
+          {/* Scroll indicator — animated dot, clicks to next section */}
+          <div className="mt-8">
+            <ScrollIndicator targetId="about" ariaLabel={dict.nav.about} />
           </div>
         </div>
 
