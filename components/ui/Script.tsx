@@ -53,7 +53,7 @@ export function Script({ children, className }: { children: ReactNode; className
     <span
       ref={ref}
       dir="ltr"
-      className={cn("inline-block font-[family-name:var(--font-angelic)] text-peach", className)}
+      className={cn("inline-block font-[family-name:var(--font-angelic)] text-peach pt-[0.25em] pb-[0.1em]", className)}
       style={{
         clipPath: revealed ? "inset(0 0% 0 0)" : "inset(0 100% 0 0)",
         transition: "clip-path 1.4s cubic-bezier(0.22, 1, 0.36, 1)",
