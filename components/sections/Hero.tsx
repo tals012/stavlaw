@@ -46,6 +46,14 @@ export function Hero() {
               {site.hero.ctaLabel}
             </a>
           </div>
+
+          {/* Scroll indicator — below the CTA, right-aligned */}
+          <div className="mt-8 text-peach/80">
+            <svg width="20" height="32" viewBox="0 0 20 32" fill="none" aria-hidden="true" className="inline-block">
+              <rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="10" cy="9" r="2" fill="currentColor" />
+            </svg>
+          </div>
         </div>
 
         {/* LEFT col (RTL: 2nd child) — square photo card with floating pill overlays + straddling cursive */}
@@ -82,20 +90,13 @@ export function Hero() {
             })}
           </div>
 
-          {/* Cursive "You Are Not Alone." — white, straddling the bottom edge of the square */}
-          <Script className="pointer-events-none absolute bottom-0 start-2 translate-y-1/2 text-white text-[clamp(2.5rem,5vw,72px)] leading-none whitespace-nowrap">
+          {/* Cursive "You Are Not Alone." — white, smaller, anchored to the visual-left (end) edge of the square, straddling the bottom */}
+          <Script className="pointer-events-none absolute bottom-0 end-2 translate-y-1/2 -translate-x-2 text-white text-[clamp(1.5rem,2.6vw,44px)] leading-none whitespace-nowrap">
             You Are Not Alone.
           </Script>
         </div>
       </div>
 
-      {/* Scroll indicator — bottom end (visual right in RTL) */}
-      <div className="absolute bottom-8 end-8 text-peach/80">
-        <svg width="20" height="32" viewBox="0 0 20 32" fill="none" aria-hidden="true">
-          <rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" strokeWidth="1.5" />
-          <circle cx="10" cy="9" r="2" fill="currentColor" />
-        </svg>
-      </div>
     </section>
   );
 }
