@@ -104,9 +104,9 @@ export function ContactForm() {
                 placeholder="שם מלא*"
                 aria-label="שם מלא"
                 aria-invalid={!!errors.name}
-                className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d]"
+                className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d]"
               />
-              {errors.name && <p className="mt-1 text-sm text-red-400 text-end">{errors.name.message}</p>}
+              {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>}
             </div>
             <div>
               <input
@@ -116,9 +116,9 @@ export function ContactForm() {
                 placeholder="טלפון*"
                 aria-label="טלפון"
                 aria-invalid={!!errors.phone}
-                className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d]"
+                className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d]"
               />
-              {errors.phone && <p className="mt-1 text-sm text-red-400 text-end">{errors.phone.message}</p>}
+              {errors.phone && <p className="mt-1 text-sm text-red-400">{errors.phone.message}</p>}
             </div>
           </div>
 
@@ -131,9 +131,9 @@ export function ContactForm() {
               placeholder="דואר אלקטרוני*"
               aria-label="אימייל"
               aria-invalid={!!errors.email}
-              className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d]"
+              className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d]"
             />
-            {errors.email && <p className="mt-1 text-sm text-red-400 text-end">{errors.email.message}</p>}
+            {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>}
           </div>
 
           {/* Message */}
@@ -145,15 +145,15 @@ export function ContactForm() {
               placeholder="*איך אני יכולה לעזור?"
               aria-label="הודעה"
               aria-invalid={!!errors.message}
-              className="w-full bg-[#222439] border border-white rounded-[30px] px-6 py-4 text-[16px] text-white placeholder-white/40 text-end focus:outline-none focus:border-[#e79c7d] resize-none"
+              className="w-full bg-[#222439] border border-white rounded-[30px] px-6 py-4 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d] resize-none"
             />
-            {errors.message && <p className="mt-1 text-sm text-red-400 text-end">{errors.message.message}</p>}
+            {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message.message}</p>}
           </div>
 
-          {/* Disclaimer checkbox */}
-          <div className="flex items-center justify-end gap-2">
-            <span className="text-[13px] text-white text-end">דיסקליימר</span>
+          {/* Disclaimer checkbox — justify-start in RTL = visual right */}
+          <div className="flex items-center justify-start gap-2">
             <div className="w-[20px] h-[20px] border border-white rounded-[5px] shrink-0" />
+            <span className="text-[13px] text-white">דיסקליימר</span>
           </div>
 
           {/* Submit */}

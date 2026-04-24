@@ -28,8 +28,8 @@ export function FAQ() {
               value={`faq-${i}`}
               className="border-2 border-navy rounded-full px-8 py-1 data-[state=open]:rounded-[30px] transition-all overflow-hidden"
             >
-              <AccordionTrigger className="text-[clamp(1rem,1.4vw,22px)] font-medium text-navy text-end py-5 hover:no-underline [&>svg]:hidden flex items-center justify-between w-full gap-4">
-                <span className="flex-1 text-end">{item.q}</span>
+              <AccordionTrigger className="text-[clamp(1rem,1.4vw,22px)] font-medium text-navy py-5 hover:no-underline [&>svg]:hidden flex items-center justify-between w-full gap-4">
+                <span className="flex-1">{item.q}</span>
                 {/* Custom toggle icons */}
                 <span className="shrink-0 data-[state=open]:hidden">
                   <Image src={faqClosed} alt="" width={24} height={24} />
@@ -38,7 +38,7 @@ export function FAQ() {
                   <Image src={faqOpen} alt="" width={24} height={24} />
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="text-[16px] text-navy/75 text-end pb-5 leading-relaxed">
+              <AccordionContent className="text-[16px] text-navy/75 pb-5 leading-relaxed">
                 {item.a}
               </AccordionContent>
             </AccordionItem>

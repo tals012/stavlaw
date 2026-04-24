@@ -38,8 +38,8 @@ export function Testimonials() {
                 key={idx}
                 className="w-full shrink-0 bg-navy rounded-[20px] grid grid-cols-1 md:grid-cols-[1fr_380px] overflow-hidden"
               >
-                {/* Case text — FIRST in DOM → visual RIGHT in RTL */}
-                <div className="p-10 flex flex-col justify-center text-end gap-4">
+                {/* Case text — FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
+                <div className="p-10 flex flex-col justify-center gap-4">
                   <div>
                     <p className="text-peach text-[22px] font-bold">{t.author} |</p>
                     <p className="text-peach text-[20px] font-bold">{t.caseType}</p>

@@ -6,8 +6,8 @@ export function Process() {
     <section id="process" className="bg-cream-100 py-20">
       <div className="mx-auto max-w-5xl px-6">
 
-        {/* Heading — right-aligned in RTL */}
-        <div className="text-end mb-16">
+        {/* Heading — right-aligned in RTL (default text-align: start = right) */}
+        <div className="mb-16">
           <Script className="text-[clamp(2.5rem,4vw,60px)] leading-none block mb-2">
             The Process
           </Script>
@@ -31,10 +31,12 @@ export function Process() {
                     {String(step.n).padStart(2, "0")}
                   </div>
 
-                  {/* Card — alternates left/right on desktop */}
+                  {/* Card — alternates left/right on desktop. In RTL:
+                      ms-auto me-0 → margin-right:auto, margin-left:0 → push LEFT
+                      ms-0 me-auto → margin-right:0, margin-left:auto → push RIGHT */}
                   <div
-                    className={`w-full md:w-[calc(50%-3rem)] bg-navy rounded-[20px] p-6 text-end ${
-                      isLeft ? "md:ms-0 md:me-auto" : "md:ms-auto md:me-0"
+                    className={`w-full md:w-[calc(50%-3rem)] bg-navy rounded-[20px] p-6 ${
+                      isLeft ? "md:ms-auto md:me-0" : "md:ms-0 md:me-auto"
                     }`}
                   >
                     {/* Mobile number */}

@@ -8,8 +8,8 @@ export function AboutBrief() {
     <section id="about" className="bg-cream-100 py-20">
       <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1.8fr_1fr]">
 
-        {/* Bio — FIRST in DOM → visual RIGHT in RTL */}
-        <div className="py-4 text-end">
+        {/* Bio — FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
+        <div className="py-4">
           <p className="text-[22px] text-navy leading-[1.116]">נעים מאוד,</p>
           <h2 className="text-[38px] font-bold text-navy leading-[1.116] mt-1">
             עו&quot;ד סתיו אליהו שוקרון
@@ -29,8 +29,8 @@ export function AboutBrief() {
             {site.hero.ctaLabel}
           </a>
 
-          {/* Cursive signature */}
-          <div className="mt-6 flex justify-end">
+          {/* Cursive signature — justify-start in RTL = visual right */}
+          <div className="mt-6 flex justify-start">
             <Script className="text-[clamp(2rem,2.5vw,44px)] text-text-mid leading-none">
               Stav Eliyahu Shokron.
             </Script>

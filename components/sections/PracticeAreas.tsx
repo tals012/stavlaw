@@ -46,8 +46,8 @@ export function PracticeAreas() {
                 <Image src={shieldIcon} alt="" width={20} height={20} />
               </div>
 
-              {/* Text */}
-              <div className="px-4 pb-5 pt-2 text-end">
+              {/* Text — default text-align: start = right in RTL */}
+              <div className="px-4 pb-5 pt-2">
                 <h3 className="text-[20px] font-bold text-white leading-[1.2]">{area.title}</h3>
                 <p className="mt-1 text-[14px] text-white/70 leading-relaxed line-clamp-3">{area.blurb}</p>
               </div>
@@ -57,7 +57,7 @@ export function PracticeAreas() {
 
         {/* Peach-bordered cream CTA panel */}
         <div className="mt-10 border-2 border-peach rounded-xl p-6 bg-cream-100 flex flex-col md:flex-row items-center justify-between gap-5">
-          <p className="text-[20px] font-bold text-navy text-center md:text-end">
+          <p className="text-[20px] font-bold text-navy text-center md:text-start">
             אני מלווה אותך בכל שאלה / בעיה
           </p>
           <a

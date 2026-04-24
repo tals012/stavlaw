@@ -8,8 +8,8 @@ export function LawyerSpotlight() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-          {/* Text — FIRST in DOM → visual RIGHT in RTL */}
-          <div className="text-end">
+          {/* Text — FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
+          <div>
             <h2
               className="font-bold text-white leading-[1.173]"
               style={{ fontSize: "clamp(2rem, 3.2vw, 48px)" }}

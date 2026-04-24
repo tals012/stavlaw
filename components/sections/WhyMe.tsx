@@ -10,27 +10,8 @@ export function WhyMe() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
-          {/* LEFT column — two navy cards stacked */}
-          <div className="order-2 md:order-1 space-y-6">
-            {whyMe.cards.map((card) => (
-              <div key={card.n} className="bg-navy rounded-[20px] p-8 text-end">
-                <span
-                  className="text-peach text-[clamp(1.5rem,2vw,36px)] select-none font-[family-name:var(--font-allura)]"
-                >
-                  {card.n}
-                </span>
-                <h3 className="text-[clamp(1.2rem,1.8vw,26px)] font-bold text-white leading-[1.173] mt-2">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-[17px] text-white/80 leading-[1.5]">
-                  {card.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* RIGHT column — decorative header + body copy */}
-          <div className="order-1 md:order-2 text-end">
+          {/* RIGHT column — decorative header + body copy (FIRST in DOM → visual right in RTL) */}
+          <div>
             <Script className="text-[clamp(2.5rem,4vw,60px)] leading-none block mb-3">
               Why Me?
             </Script>
@@ -45,6 +26,26 @@ export function WhyMe() {
               ))}
             </div>
           </div>
+
+          {/* LEFT column — two navy cards stacked (SECOND in DOM → visual left in RTL) */}
+          <div className="space-y-6">
+            {whyMe.cards.map((card) => (
+              <div key={card.n} className="bg-navy rounded-[20px] p-8">
+                <span
+                  className="text-peach text-[clamp(1.5rem,2vw,36px)] select-none font-[family-name:var(--font-angelic)]"
+                >
+                  {card.n}
+                </span>
+                <h3 className="text-[clamp(1.2rem,1.8vw,26px)] font-bold text-white leading-[1.173] mt-2">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-[17px] text-white/80 leading-[1.5]">
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
