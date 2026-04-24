@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { site } from "@/content/site";
 import { Script } from "@/components/ui/Script";
-import aboutPortrait from "@/figma-assets/about-portrait.jpg";
+import aboutPortrait from "@/figma-assets/lawyer-photo.jpg";
 
 export function AboutBrief() {
   return (
