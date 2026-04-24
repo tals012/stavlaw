@@ -53,10 +53,6 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Scroll indicator — animated dot, clicks to next section */}
-          <div className="mt-8">
-            <ScrollIndicator targetId="about" ariaLabel={dict.nav.about} />
-          </div>
         </div>
 
         {/* LEFT col (RTL: 2nd child) — square photo card with floating pill overlays + straddling cursive */}
@@ -80,6 +76,11 @@ export function Hero() {
             {dict.hero.scriptAside}
           </Script>
         </div>
+      </div>
+
+      {/* Scroll indicator — centered at the bottom of the hero, clicks to I Know This Firsthand section */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+        <ScrollIndicator targetId="know-firsthand" ariaLabel={dict.knowFirsthand.eyebrow} />
       </div>
 
     </section>

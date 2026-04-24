@@ -7,7 +7,7 @@ export function KnowFirsthand() {
   const { dict } = useLocale();
 
   return (
-    <section className="bg-cream-100 py-24">
+    <section id="know-firsthand" className="bg-cream-100 py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="bg-navy rounded-[22px] px-8 py-16 md:px-16 md:py-20 text-center">
           <Script className="text-[clamp(3rem,5vw,68px)] leading-none block mb-8">
