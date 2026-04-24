@@ -5,7 +5,7 @@ export function Script({ children, className }: { children: ReactNode; className
   return (
     <span
       className={cn(
-        "font-[family-name:var(--font-allura)] text-peach",
+        "font-[family-name:var(--font-angelic)] text-peach",
         className
       )}
     >

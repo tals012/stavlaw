@@ -19,6 +19,15 @@ const googleSans = localFont({
   variable: "--font-google-sans",
 });
 
+// Angelic Bonques Script — decorative cursive for English section headers
+const angelic = localFont({
+  src: [
+    { path: "../fonts/angelic/AngelicBonquesScript.ttf", weight: "400", style: "normal" },
+  ],
+  display: "swap",
+  variable: "--font-angelic",
+});
+
 // Heebo retained as Hebrew fallback (Google Sans static files don't include Hebrew glyphs)
 const heebo = Heebo({
   subsets: ["hebrew", "latin"],
@@ -40,7 +49,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="he" dir="rtl" className={`${googleSans.variable} ${heebo.variable} ${allura.variable}`}>
+    <html lang="he" dir="rtl" className={`${googleSans.variable} ${angelic.variable} ${heebo.variable} ${allura.variable}`}>
       <body className="font-sans antialiased">
         {children}
         <Toaster richColors position="top-center" dir="rtl" />
