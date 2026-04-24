@@ -10,6 +10,7 @@ import {
   useMotionValueEvent,
   type MotionValue,
 } from "framer-motion";
+import type { LottieRefCurrentProps } from "lottie-react";
 import { Script } from "@/components/ui/Script";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 import type { ProcessStepEntry } from "@/lib/i18n/types";
@@ -20,7 +21,12 @@ import articleIcon from "@/public/lottie/process/step-2-article.json";
 import groupsIcon from "@/public/lottie/process/step-4-groups.json";
 import verifiedIcon from "@/public/lottie/process/step-5-verified.json";
 
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+// Preload the lottie-react chunk at module evaluation so it's ready
+// before the user scrolls into the Process section.
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const NAVY_RGB: [number, number, number] = [34 / 255, 36 / 255, 57 / 255];
 
@@ -173,13 +179,14 @@ function StepRow({
 
   const tintedIcon = useMemo(() => tintLottie(icon), [icon]);
 
-  const [shouldPlay, setShouldPlay] = useState(false);
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
   const [triggered, setTriggered] = useState(false);
 
   useMotionValueEvent(iconOpacity, "change", (value) => {
     if (value > 0.25 && !triggered) {
       setTriggered(true);
-      window.setTimeout(() => setShouldPlay(true), 1000);
+      // Play from frame 0 now that the Lottie is already mounted & loaded.
+      lottieRef.current?.goToAndPlay(0, true);
     }
   });
 
@@ -202,19 +209,20 @@ function StepRow({
           {String(step.n).padStart(2, "0")}
         </motion.span>
 
-        {/* Lottie icon - mounts and autoplays when activation is reached */}
+        {/* Lottie icon - mounted immediately; scroll reveals via opacity/scale.
+            Playback is triggered programmatically via lottieRef when the
+            activation threshold is crossed, so there's no chunk-load delay. */}
         <motion.div
           style={{ opacity: iconOpacity, scale: iconScale }}
           className="absolute w-[44px] h-[44px] lg:w-[56px] lg:h-[56px] pointer-events-none"
         >
-          {shouldPlay && (
-            <Lottie
-              animationData={tintedIcon}
-              loop={false}
-              autoplay
-              rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
-            />
-          )}
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={tintedIcon}
+            loop={false}
+            autoplay={false}
+            rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
+          />
         </motion.div>
       </motion.div>
 
