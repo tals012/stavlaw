@@ -79,7 +79,7 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator — centered below the hero content, clicks to I Know This Firsthand section */}
-      <div className="flex justify-center pt-10 pb-10 md:pt-12 md:pb-12">
+      <div className="flex justify-center pt-4 pb-10 md:pt-5 md:pb-12">
         <ScrollIndicator targetId="know-firsthand" ariaLabel={dict.knowFirsthand.eyebrow} />
       </div>
 
