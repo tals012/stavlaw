@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import { site } from "@/content/site";
-import lawyerPhoto from "@/figma-assets/lawyer-photo.jpg";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function LawyerSpotlight() {
+  const { dict } = useLocale();
+
   return (
     <section id="spotlight" className="bg-navy py-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -14,29 +17,29 @@ export function LawyerSpotlight() {
               className="font-bold text-white leading-[1.173]"
               style={{ fontSize: "clamp(2rem, 3.2vw, 48px)" }}
             >
-              {site.spotlight.headline}
+              {dict.spotlight.headline}
             </h2>
             <p className="mt-5 text-[18px] text-white/80 leading-[1.5]">
-              {site.spotlight.body}
+              {dict.spotlight.body}
             </p>
             <a
               href="#contact"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-peach border-2 border-peach px-8 py-3 text-[18px] font-bold text-text-dark hover:bg-peach-600 hover:border-peach-600 transition-colors"
             >
-              {site.spotlight.ctaLabel}
+              {dict.spotlight.ctaLabel}
             </a>
           </div>
 
           {/* Image — SECOND in DOM → visual LEFT in RTL */}
           <div
-            className="relative rounded-[20px] overflow-hidden aspect-[4/3] w-full"
+            className="relative rounded-[20px] overflow-hidden aspect-[3/2] w-full shadow-xl"
           >
             <Image
-              src={lawyerPhoto}
-              alt={site.about.portraitAlt}
+              src="/images/spotlight-termination.jpg"
+              alt={dict.about.portraitAlt}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-top"
+              className="object-cover"
             />
           </div>
         </div>

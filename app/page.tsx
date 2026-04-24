@@ -12,6 +12,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppFloat } from "@/components/sections/WhatsAppFloat";
+import { FadeInSection } from "@/components/ui/FadeInSection";
 import { JsonLd } from "@/components/schema/JsonLd";
 import {
   buildAttorney,
@@ -38,15 +39,15 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <KnowFirsthand />
-        <AboutBrief />
-        <PracticeAreas />
-        <Process />
-        <LawyerSpotlight />
-        <WhyMe />
-        <Testimonials />
-        <FAQ />
-        <ContactForm />
+        <FadeInSection><KnowFirsthand /></FadeInSection>
+        <FadeInSection><AboutBrief /></FadeInSection>
+        <FadeInSection><PracticeAreas /></FadeInSection>
+        <FadeInSection><Process /></FadeInSection>
+        <FadeInSection><LawyerSpotlight /></FadeInSection>
+        <FadeInSection><WhyMe /></FadeInSection>
+        <FadeInSection><Testimonials /></FadeInSection>
+        <FadeInSection><FAQ /></FadeInSection>
+        <FadeInSection><ContactForm /></FadeInSection>
       </main>
       <Footer />
       <WhatsAppFloat />

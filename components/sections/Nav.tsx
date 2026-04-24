@@ -2,19 +2,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import navLogoMark from "@/figma-assets/nav-logo-mark.svg";
-
-const links = [
-  { href: "#about", label: "קצת עלי", active: true },
-  { href: "#practice-areas", label: "מעטפת משפטית" },
-  { href: "#process", label: "איך עובד התהליך?" },
-  { href: "#testimonials", label: "דוגמאות מהעולם האמיתי" },
-  { href: "#why-me", label: "למה אני?" },
-  { href: "#faq", label: "שאלות נפוצות" },
-  { href: "#contact", label: "יצירת קשר" },
-];
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function Nav() {
+  const { dict } = useLocale();
+
+  const links = [
+    { href: "#about", label: dict.nav.about, active: true },
+    { href: "#practice-areas", label: dict.nav.practiceAreas },
+    { href: "#process", label: dict.nav.process },
+    { href: "#testimonials", label: dict.nav.testimonials },
+    { href: "#why-me", label: dict.nav.whyMe },
+    { href: "#faq", label: dict.nav.faq },
+    { href: "#contact", label: dict.nav.contact },
+  ];
+
   return (
     <header className="absolute start-0 end-0 top-0 z-50">
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-8 pt-6 pb-4">
@@ -34,23 +37,22 @@ export function Nav() {
           ))}
         </ul>
 
-        {/* Logo + brand — SECOND in DOM → visual LEFT in RTL. But we want it on the far RIGHT visually,
-            which in RTL means it must come FIRST in DOM. Fix by using flex-row-reverse OR swapping order. */}
-        <Link href="/" aria-label="עמוד הבית" className="order-first flex items-center gap-3 shrink-0">
-          <Image
-            src={navLogoMark}
-            alt="SE logo"
-            width={52}
-            height={52}
-            className="block"
-          />
-          <div className="hidden sm:block leading-[1.1] text-white text-[10px] tracking-wide">
-            <div>stav</div>
-            <div>eliyahu</div>
-            <div>shukran</div>
-            <div className="text-peach mt-0.5">Lawyer</div>
-          </div>
-        </Link>
+        {/* Language switcher — visible on all breakpoints */}
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+
+          {/* Logo — appears on the far RIGHT visually in RTL via order-first */}
+          <Link href="/" aria-label="עמוד הבית" className="order-first flex items-center shrink-0">
+            <Image
+              src="/stav-logo.svg"
+              alt="עו״ד סתיו אליהו שוקרון"
+              width={140}
+              height={104}
+              priority
+              className="block h-14 w-auto [filter:brightness(0)_invert(1)]"
+            />
+          </Link>
+        </div>
       </nav>
     </header>
   );

@@ -1,0 +1,154 @@
+import type { Dictionary } from "../types";
+
+export const en: Dictionary = {
+  nav: {
+    about: "About Me",
+    practiceAreas: "Practice Areas",
+    process: "How It Works",
+    testimonials: "Real Cases",
+    whyMe: "Why Me?",
+    faq: "FAQ",
+    contact: "Contact",
+    homeAria: "Home",
+  },
+  cta: {
+    consult: "Book a Consultation",
+  },
+  languageSwitcher: {
+    label: "Language",
+  },
+  brand: {
+    name: "Stav Shukrun, Attorney at Law",
+    initials: "SE",
+  },
+  hero: {
+    h1Line1: "Your rights at work",
+    h1Line2Pre: "are not a suggestion",
+    h1Line2Underline: "they are the law!",
+    subLight: "Were you fired without a hearing? Is your employer ignoring your rights, failing to pay pension or overtime?",
+    subBold: "That is exactly why I am here. I will make sure you receive every bit of compensation and every right you are owed — with determination and no compromises.",
+    ctaLabel: "Book a Consultation",
+    pills: [
+      { label: "Labor Court Representation", position: "top" },
+      { label: "Realizing Your Full Rights", position: "mid" },
+      { label: "Pre-Dismissal Hearing Representation", position: "bottom" },
+    ],
+    scriptAside: "You Are Not Alone.",
+  },
+  about: {
+    scriptEyebrow: "I Know This Firsthand.",
+    introParagraph:
+      "Let me speak more deeply about the problem — many employees are unaware of their rights. I believe that behind every legal case stands a person, a family, or a business who needs not only professional knowledge, but someone who will fight for them with determination and see the full picture.",
+    paragraphs: [
+      "I believe that behind every legal case stands a person, a family, or a business who needs not only professional knowledge, but someone who will fight for them with determination and see the full picture.",
+      "My professional path combines academic depth — a Master of Laws (LL.M.) from Bar-Ilan University — with rich practical experience from the field. As an attorney authorized to serve as a receiver in enforcement cases, I know employment law from the inside — both from the employees' side and the employers' side.",
+    ],
+    portraitAlt: "Stav Eliyahu Shukrun, Attorney at Law",
+    greeting: "Nice to meet you,",
+    namePlate: "Stav Eliyahu Shukrun, Attorney at Law",
+    signature: "Stav Eliyahu Shukrun.",
+  },
+  practiceAreas: {
+    eyebrow: "Legal Assistance",
+    heading: "Full legal support for employees",
+    sub: "Professional and personal representation at every stage of the legal process against your employer",
+    panelHeading: "I am with you for every question and every issue",
+    panelBody:
+      "My professional path combines academic depth — a Master of Laws (LL.M.) from Bar-Ilan University — with rich practical experience from the field. As an attorney authorized to serve as a receiver in enforcement cases, I know employment law from the inside — both from the employees' side and the employers' side.",
+    items: [
+      { slug: "labor", title: "Wrongful Termination", blurb: "Claiming and securing full compensation for dismissals that did not meet legal requirements.", imageAlt: "Wrongful termination" },
+      { slug: "civil", title: "Employee Representation", blurb: "Professional representation of employees in any legal proceeding against their employer — including wage claims, severance, and social benefits.", imageAlt: "Employee representation" },
+      { slug: "hearing", title: "Pre-Dismissal Hearing Representation", blurb: "Guidance and representation in pre-dismissal hearings — thorough preparation, presence at the hearing, and defense of your rights.", imageAlt: "Pre-dismissal hearing" },
+      { slug: "harassment", title: "Abusive Employment & Workplace Harassment", blurb: "Handling claims against employers for harassment, bullying, discrimination, and abusive working conditions.", imageAlt: "Workplace harassment" },
+      { slug: "injunction", title: "Injunctions", blurb: "Filing urgent requests for injunctions against wrongful dismissals or violations of employee rights.", imageAlt: "Injunctions" },
+      { slug: "rights", title: "Maximizing Your Rights", blurb: "Comprehensive review and full realization of all social benefits throughout your entire employment period.", imageAlt: "Maximizing rights" },
+    ],
+  },
+  process: {
+    eyebrow: "The Process",
+    heading: "How the process works",
+    sub: "A transparent, orderly workflow — from the first meeting to the enforcement of the judgment. Every step is defined, planned, and personally supervised.",
+    steps: [
+      { n: 1, title: "Initial Consultation", blurb: "We listen carefully, understand your situation, and assess your chances of success together." },
+      { n: 2, title: "Case Review", blurb: "We examine every document, employment contract, and piece of evidence relevant to your case." },
+      { n: 3, title: "Building a Strategy", blurb: "We craft a tailored legal strategy with clear goals and a defined timeline." },
+      { n: 4, title: "Handling the Employer", blurb: "We lead the negotiation or legal proceeding with determination until you receive the compensation you deserve." },
+      { n: 5, title: "Enforcing the Judgment", blurb: "We make sure the judgment is fully enforced and every awarded sum is collected on your behalf." },
+    ],
+  },
+  spotlight: {
+    headline: "Helping you realize the rights you are owed",
+    body: "After five years managing complex cases at Israel's leading law firms, I know employment law from the inside. I bring the same strategic knowledge and high standards — without the distance and bureaucracy of a large firm.",
+    ctaLabel: "Book a Consultation",
+  },
+  testimonials: {
+    eyebrow: "From The Real World",
+    heading: "Real-world examples",
+    prev: "Previous",
+    next: "Next",
+    slideLabel: (n) => `Go to slide ${n}`,
+    items: [
+      { quote: "A., a garage worker of 15 years, was injured on the job and wrongfully dismissed. Thanks to professional representation, we secured full compensation.", author: "A.K.", caseType: "Wrongful termination" },
+      { quote: "Stav guided me through the entire process in a professional and personal way. I felt there was someone truly fighting for me.", author: "M.D.", caseType: "Hearing representation" },
+      { quote: "We filed a claim over unpaid overtime and pension. The outcome exceeded my expectations.", author: "Y.L.", caseType: "Rights realization" },
+    ],
+  },
+  faq: {
+    eyebrow: "FAQ",
+    heading: "Frequently asked questions",
+    bottomPrompt: "Didn't find your question?",
+    bottomCta: "Let's talk",
+    items: [
+      { q: "I was fired without a hearing. Is there anything I can do?", a: "Yes. Dismissal without a hearing is generally unlawful. Employers are required to hold a pre-dismissal hearing under Israeli case law, and you may be entitled to significant compensation." },
+      { q: "My employer isn't paying my overtime. What can be done?", a: "Employees are entitled to overtime under the Hours of Work and Rest Law. You can file a claim with the Labor Court to recover unpaid wages and obtain compensation." },
+      { q: "What's the difference between severance pay and compensation for wrongful dismissal?", a: "Severance pay is a basic right for every eligible employee. Compensation for wrongful dismissal is additional and applies when the dismissal was carried out unlawfully — and can amount to many months of salary." },
+      { q: "How much does an initial consultation cost?", a: "The initial consultation is paid. Once we understand your case, we can discuss fee structures — including success-based fees where relevant." },
+      { q: "How long does a Labor Court case take?", a: "Timelines vary with the complexity of the case. A settlement can sometimes be reached within a few months; a full proceeding may take one to two years." },
+    ],
+  },
+  contact: {
+    eyebrow: "Contact Me",
+    headingLine1: "Book a consultation",
+    headingLine2: "Leave your details now",
+    sub: "Leave your details and I will get back to you promptly for an initial consultation",
+    whatsappMessage: "Hi, I'm reaching out via the website and would like a consultation",
+    form: {
+      namePlaceholder: "Full name*",
+      phonePlaceholder: "Phone*",
+      emailPlaceholder: "Email*",
+      messagePlaceholder: "How can I help?*",
+      disclaimer: "Disclaimer",
+      submit: "Send",
+      submitting: "Sending...",
+      successToast: "Thank you — we'll be in touch shortly",
+      errorToast: "Submission failed — feel free to reach out on WhatsApp",
+    },
+  },
+  whyMe: {
+    eyebrow: "Why Me?",
+    heading: "Why me?",
+    paragraphs: [
+      "After five years managing complex cases at Israel's leading law firms, I know employment law from the inside.",
+      "I bring the same strategic knowledge and the highest standards — without the distance and bureaucracy of a large firm.",
+    ],
+    cards: [
+      { n: "01", title: "Big-firm caliber", body: "After five years managing complex cases at Israel's leading law firms, I know employment law from the inside. I bring the same strategic knowledge and high standards, without the distance and bureaucracy of a large firm." },
+      { n: "02", title: "360° strategy", body: "I have represented both employers and employees. That experience lets me read the map ahead of time, anticipate your employer's moves, and build a strategy that neutralizes their defenses before they're even raised." },
+      { n: "03", title: "Personal availability", body: "I personally handle every case from start to finish — speaking with you directly, available for questions, and updating you at every stage. No interns fill in for me, no automated handling. You work directly with me and receive all the attention your case requires." },
+      { n: "04", title: "Transparent, fair fees", body: "At our first meeting we'll agree on a clear fee structure — sometimes success-based — so you know exactly what you're paying and why. No surprises, no hidden line items, just a mutual commitment to succeed together." },
+      { n: "05", title: "Results that speak for themselves", body: "Dozens of employees have already received the full rights they were owed — severance, overtime, pension and deductions — thanks to determined, professional representation. My work is measured in real results, not promises." },
+    ],
+    prev: "Previous",
+    next: "Next",
+    dotLabel: (n) => `Go to card ${n}`,
+  },
+  knowFirsthand: {
+    eyebrow: "I Know This Firsthand.",
+    body: "Speaking to the heart of the problem — many employees are unaware of the rights they hold. I believe that behind every legal case stands a person, a family, or a business who needs not just professional knowledge, but someone who will fight for them with determination and see the full picture.",
+  },
+  footer: {
+    legal: "Site Terms | Privacy Policy",
+    copyright: "All rights reserved | 2026",
+    attribution: "By UC Digital | Development, Design & Branding",
+  },
+};

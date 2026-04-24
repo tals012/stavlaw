@@ -7,12 +7,16 @@ import { toast } from "sonner";
 import { site } from "@/content/site";
 import { contactSchema, type ContactInput } from "@/lib/contact-schema";
 import { Script } from "@/components/ui/Script";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 import Image from "next/image";
 import aboutPortrait from "@/figma-assets/about-portrait.jpg";
 import whatsappIcon from "@/figma-assets/whatsapp-icon.svg";
 import mailIcon from "@/figma-assets/mail-icon.svg";
 
 export function ContactForm() {
+  const { dict } = useLocale();
+  const c = dict.contact;
+  const form = c.form;
   const [submitting, setSubmitting] = useState(false);
   const {
     register,
@@ -30,10 +34,10 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error(String(res.status));
-      toast.success("תודה, ניצור איתך קשר בהקדם");
+      toast.success(form.successToast);
       reset();
     } catch {
-      toast.error("שליחה נכשלה — אפשר ליצור קשר בוואטסאפ");
+      toast.error(form.errorToast);
     } finally {
       setSubmitting(false);
     }
@@ -57,23 +61,23 @@ export function ContactForm() {
       <div className="relative mx-auto max-w-3xl bg-[#222439] py-16 px-10 min-h-[1060px] flex flex-col items-center justify-center">
         {/* Contact Me script */}
         <Script className="text-[clamp(2.5rem,3.5vw,54px)] leading-none block mb-4">
-          Contact Me
+          {c.eyebrow}
         </Script>
 
         {/* Heading */}
         <h2 className="text-[clamp(2rem,3vw,45px)] font-bold text-white leading-[1.173] text-center">
-          לשיחת ייעוץ
+          {c.headingLine1}
           <br />
-          השאירו פרטים עכשיו
+          {c.headingLine2}
         </h2>
         <p className="mt-4 text-[16px] text-white/80 text-center max-w-sm leading-[1.371]">
-          {site.contact.sub}
+          {c.sub}
         </p>
 
         {/* Contact chips */}
         <div className="mt-6 flex items-center gap-4 flex-wrap justify-center">
           <a
-            href={`https://wa.me/${site.contact.phoneIntl.replace("+", "")}?text=${encodeURIComponent(site.contact.whatsappMessage)}`}
+            href={`https://wa.me/${site.contact.phoneIntl.replace("+", "")}?text=${encodeURIComponent(c.whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[#f4f0eb] text-[20px] hover:text-[#e79c7d] transition-colors"
@@ -101,8 +105,8 @@ export function ContactForm() {
               <input
                 id="name"
                 {...register("name")}
-                placeholder="שם מלא*"
-                aria-label="שם מלא"
+                placeholder={form.namePlaceholder}
+                aria-label={form.namePlaceholder}
                 aria-invalid={!!errors.name}
                 className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d]"
               />
@@ -113,8 +117,8 @@ export function ContactForm() {
                 id="phone"
                 inputMode="tel"
                 {...register("phone")}
-                placeholder="טלפון*"
-                aria-label="טלפון"
+                placeholder={form.phonePlaceholder}
+                aria-label={form.phonePlaceholder}
                 aria-invalid={!!errors.phone}
                 className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d]"
               />
@@ -128,8 +132,8 @@ export function ContactForm() {
               id="email"
               type="email"
               {...register("email")}
-              placeholder="דואר אלקטרוני*"
-              aria-label="אימייל"
+              placeholder={form.emailPlaceholder}
+              aria-label={form.emailPlaceholder}
               aria-invalid={!!errors.email}
               className="w-full bg-[#222439] border border-white rounded-full h-[66px] px-6 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d]"
             />
@@ -142,8 +146,8 @@ export function ContactForm() {
               id="message"
               rows={5}
               {...register("message")}
-              placeholder="*איך אני יכולה לעזור?"
-              aria-label="הודעה"
+              placeholder={form.messagePlaceholder}
+              aria-label={form.messagePlaceholder}
               aria-invalid={!!errors.message}
               className="w-full bg-[#222439] border border-white rounded-[30px] px-6 py-4 text-[16px] text-white placeholder-white/40 focus:outline-none focus:border-[#e79c7d] resize-none"
             />
@@ -153,7 +157,7 @@ export function ContactForm() {
           {/* Disclaimer checkbox — justify-start in RTL = visual right */}
           <div className="flex items-center justify-start gap-2">
             <div className="w-[20px] h-[20px] border border-white rounded-[5px] shrink-0" />
-            <span className="text-[13px] text-white">דיסקליימר</span>
+            <span className="text-[13px] text-white">{form.disclaimer}</span>
           </div>
 
           {/* Submit */}
@@ -163,7 +167,7 @@ export function ContactForm() {
               disabled={submitting}
               className="bg-[#e79c7d] border border-black rounded-[83px] h-[55px] px-10 text-[18px] font-bold text-[#30303b] hover:bg-[#d4845f] transition-colors disabled:opacity-50"
             >
-              {submitting ? "שולח..." : "שליחה"}
+              {submitting ? form.submitting : form.submit}
             </button>
           </div>
         </form>

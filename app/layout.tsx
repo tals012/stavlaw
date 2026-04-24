@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Heebo, Allura } from "next/font/google";
+import { Heebo, Allura, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleAnalytics } from "@/lib/analytics";
+import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import "./globals.css";
 
 // Google Sans — self-hosted from /fonts/google-sans (proprietary, user-supplied)
@@ -43,16 +44,26 @@ const allura = Allura({
   variable: "--font-allura",
 });
 
+// Playfair Display — elegant serif for numerals in the Process stepper
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-playfair",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="he" dir="rtl" className={`${googleSans.variable} ${angelic.variable} ${heebo.variable} ${allura.variable}`}>
+    <html lang="he" dir="rtl" className={`${googleSans.variable} ${angelic.variable} ${heebo.variable} ${allura.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
-        {children}
-        <Toaster richColors position="top-center" dir="rtl" />
+        <LocaleProvider>
+          {children}
+          <Toaster richColors position="top-center" dir="rtl" />
+        </LocaleProvider>
         <GoogleAnalytics />
         <Analytics />
         <SpeedInsights />

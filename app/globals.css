@@ -26,6 +26,20 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* LTR-only tokens inside RTL Hebrew paragraphs */
 bdi { unicode-bidi: isolate; }
 

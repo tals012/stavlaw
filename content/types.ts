@@ -20,7 +20,7 @@ export type SiteContent = {
     subLight: string;
     subBold: string;
     ctaLabel: string;
-    pills: Array<{ label: string; position: "top" | "mid" | "bottom" }>;
+    pills: Array<{ label: string; position: "name" | "top" | "mid" | "bottom" }>;
   };
   about: {
     paragraphs: string[];
