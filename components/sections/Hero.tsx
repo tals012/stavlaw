@@ -48,29 +48,26 @@ export function Hero() {
           </div>
         </div>
 
-        {/* LEFT col (RTL: 2nd child) — photo card with floating pill overlays */}
-        <div className="relative w-full max-w-[560px] justify-self-start">
-          <div
-            className="relative rounded-[22px] overflow-hidden"
-            style={{ aspectRatio: "5 / 6" }}
-          >
+        {/* LEFT col (RTL: 2nd child) — square photo card with floating pill overlays + straddling cursive */}
+        <div className="relative w-full max-w-[580px] justify-self-start">
+          <div className="relative aspect-square rounded-[22px] overflow-hidden">
             <Image
               src={heroPortrait}
               alt={site.about.portraitAlt}
               fill
               priority
-              sizes="(max-width: 768px) 90vw, 540px"
+              sizes="(max-width: 768px) 90vw, 580px"
               className="object-cover grayscale"
             />
 
-            {/* Pill overlays — positions keyed by `position` on each pill */}
+            {/* Pill overlays */}
             {site.hero.pills.map((pill, i) => {
               const pos =
                 pill.position === "top"
-                  ? "top-[14%] start-[30%]"
+                  ? "top-[12%] start-[28%]"
                   : pill.position === "mid"
-                  ? "top-[52%] end-[6%]"
-                  : "bottom-[10%] start-[34%]";
+                  ? "top-[50%] end-[4%]"
+                  : "bottom-[12%] start-[30%]";
               return (
                 <div
                   key={i}
@@ -85,12 +82,10 @@ export function Hero() {
             })}
           </div>
 
-          {/* Cursive line under the image, visual-left aligned */}
-          <div className="mt-6 ps-2">
-            <Script className="text-[clamp(2.5rem,5vw,68px)] leading-none">
-              You Are Not Alone.
-            </Script>
-          </div>
+          {/* Cursive "You Are Not Alone." — white, straddling the bottom edge of the square */}
+          <Script className="pointer-events-none absolute bottom-0 start-2 translate-y-1/2 text-white text-[clamp(2.5rem,5vw,72px)] leading-none whitespace-nowrap">
+            You Are Not Alone.
+          </Script>
         </div>
       </div>
 
