@@ -51,41 +51,8 @@ export function Nav() {
   return (
     <header className="absolute start-0 end-0 top-0 z-50">
       <nav className="relative mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 md:px-8 pt-5 pb-4 md:pt-6">
-        {/* Visual-right in RTL (DOM first): Logo */}
-        <Link
-          href="/"
-          aria-label="עמוד הבית"
-          className="flex items-center shrink-0"
-        >
-          <Image
-            src="/stav-logo.svg"
-            alt="עו״ד סתיו אליהו שוקרון"
-            width={140}
-            height={104}
-            priority
-            className="block h-12 md:h-14 w-auto [filter:brightness(0)_invert(1)]"
-          />
-        </Link>
-
-        {/* Center: Desktop links */}
-        <ul className="hidden flex-1 items-center justify-center gap-7 lg:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className={`text-[15px] text-white hover:text-peach transition-colors whitespace-nowrap ${
-                  l.active ? "underline decoration-peach decoration-2 underline-offset-[8px]" : ""
-                }`}
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Visual-left in RTL (DOM last): LanguageSwitcher + mobile hamburger */}
-        <div className="flex items-center gap-2 md:gap-3">
-          <LanguageSwitcher />
+        {/* Visual-right in RTL (DOM first): mobile hamburger OR desktop logo */}
+        <div className="flex items-center shrink-0">
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
@@ -97,6 +64,57 @@ export function Nav() {
             <Menu className="h-6 w-6" aria-hidden="true" />
             <span className="sr-only">תפריט</span>
           </button>
+          <Link
+            href="/"
+            aria-label="עמוד הבית"
+            className="hidden lg:flex items-center shrink-0"
+          >
+            <Image
+              src="/stav-logo.svg"
+              alt="עו״ד סתיו אליהו שוקרון"
+              width={140}
+              height={104}
+              priority
+              className="block h-14 w-auto [filter:brightness(0)_invert(1)]"
+            />
+          </Link>
+        </div>
+
+        {/* Center: mobile logo OR desktop menu */}
+        <div className="flex flex-1 items-center justify-center">
+          <Link
+            href="/"
+            aria-label="עמוד הבית"
+            className="flex items-center shrink-0 lg:hidden"
+          >
+            <Image
+              src="/stav-logo.svg"
+              alt="עו״ד סתיו אליהו שוקרון"
+              width={140}
+              height={104}
+              priority
+              className="block h-12 w-auto [filter:brightness(0)_invert(1)]"
+            />
+          </Link>
+          <ul className="hidden items-center gap-7 lg:flex">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className={`text-[15px] text-white hover:text-peach transition-colors whitespace-nowrap ${
+                    l.active ? "underline decoration-peach decoration-2 underline-offset-[8px]" : ""
+                  }`}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Visual-left in RTL (DOM last): LanguageSwitcher */}
+        <div className="flex items-center shrink-0">
+          <LanguageSwitcher />
         </div>
       </nav>
 
