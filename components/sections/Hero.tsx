@@ -9,12 +9,12 @@ export function Hero() {
       {/* top peach accent bar */}
       <div className="absolute start-0 end-0 top-0 h-[3px] bg-peach" />
 
-      <div className="mx-auto w-full max-w-[1400px] px-8 pt-40 pb-16 grid gap-12 md:grid-cols-2 items-center">
-        {/* RIGHT col (RTL: 1st child) — text block, fully right-aligned */}
-        <div className="text-end flex flex-col items-end">
+      <div className="mx-auto w-full max-w-[1600px] px-[clamp(1rem,4vw,4rem)] pt-40 pb-16 grid gap-10 md:grid-cols-[1.3fr_1fr] items-center">
+        {/* RIGHT col (RTL: 1st child) — text block. In RTL, block default is text-start = right, so NO text-end. */}
+        <div className="w-full">
           <h1
-            className="font-black text-white leading-[1.15] text-end"
-            style={{ fontSize: "clamp(2.2rem, 4.2vw, 64px)" }}
+            className="font-black text-white leading-[1.1]"
+            style={{ fontSize: "clamp(2rem, 4vw, 62px)" }}
           >
             {site.hero.h1Line1}
             <br />
@@ -26,28 +26,30 @@ export function Hero() {
           </h1>
 
           <p
-            className="mt-7 text-white/85 leading-[1.55] text-end"
-            style={{ fontSize: "clamp(1rem, 1.25vw, 19px)", maxWidth: "560px" }}
+            className="mt-7 text-white/85 leading-[1.55]"
+            style={{ fontSize: "clamp(1rem, 1.2vw, 19px)", maxWidth: "620px" }}
           >
             {site.hero.subLight}
           </p>
           <p
-            className="mt-3 text-white font-bold leading-[1.55] text-end"
-            style={{ fontSize: "clamp(1rem, 1.25vw, 19px)", maxWidth: "560px" }}
+            className="mt-3 text-white font-bold leading-[1.55]"
+            style={{ fontSize: "clamp(1rem, 1.2vw, 19px)", maxWidth: "620px" }}
           >
             {site.hero.subBold}
           </p>
 
-          <a
-            href="#contact"
-            className="mt-10 inline-flex items-center justify-center rounded-full bg-peach px-10 py-4 text-[18px] font-bold text-navy hover:bg-peach-600 transition-colors"
-          >
-            {site.hero.ctaLabel}
-          </a>
+          <div className="mt-10">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full bg-peach px-10 py-4 text-[18px] font-bold text-navy hover:bg-peach-600 transition-colors"
+            >
+              {site.hero.ctaLabel}
+            </a>
+          </div>
         </div>
 
         {/* LEFT col (RTL: 2nd child) — photo card with floating pill overlays */}
-        <div className="relative w-full max-w-[540px] justify-self-start">
+        <div className="relative w-full max-w-[560px] justify-self-start">
           <div
             className="relative rounded-[22px] overflow-hidden"
             style={{ aspectRatio: "5 / 6" }}
