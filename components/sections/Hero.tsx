@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { site } from "@/content/site";
 import { Script } from "@/components/ui/Script";
-import heroPortrait from "@/figma-assets/hero-portrait.jpg";
+import heroPortrait from "@/figma-assets/hero-portrait.png";
 
 export function Hero() {
   return (
@@ -10,10 +10,10 @@ export function Hero() {
       <div className="absolute start-0 end-0 top-0 h-[3px] bg-peach" />
 
       <div className="mx-auto w-full max-w-[1400px] px-8 pt-40 pb-16 grid gap-12 md:grid-cols-2 items-center">
-        {/* RIGHT col (RTL: 1st child) — text block */}
-        <div className="text-end">
+        {/* RIGHT col (RTL: 1st child) — text block, fully right-aligned */}
+        <div className="text-end flex flex-col items-end">
           <h1
-            className="font-black text-white leading-[1.15]"
+            className="font-black text-white leading-[1.15] text-end"
             style={{ fontSize: "clamp(2.2rem, 4.2vw, 64px)" }}
           >
             {site.hero.h1Line1}
@@ -26,14 +26,14 @@ export function Hero() {
           </h1>
 
           <p
-            className="mt-7 text-white/85 leading-[1.55]"
-            style={{ fontSize: "clamp(1rem, 1.25vw, 19px)", maxWidth: "560px", marginInlineStart: "auto" }}
+            className="mt-7 text-white/85 leading-[1.55] text-end"
+            style={{ fontSize: "clamp(1rem, 1.25vw, 19px)", maxWidth: "560px" }}
           >
             {site.hero.subLight}
           </p>
           <p
-            className="mt-3 text-white font-bold leading-[1.55]"
-            style={{ fontSize: "clamp(1rem, 1.25vw, 19px)", maxWidth: "560px", marginInlineStart: "auto" }}
+            className="mt-3 text-white font-bold leading-[1.55] text-end"
+            style={{ fontSize: "clamp(1rem, 1.25vw, 19px)", maxWidth: "560px" }}
           >
             {site.hero.subBold}
           </p>
