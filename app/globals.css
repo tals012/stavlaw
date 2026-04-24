@@ -43,6 +43,44 @@ section[id] {
 /* LTR-only tokens inside RTL Hebrew paragraphs */
 bdi { unicode-bidi: isolate; }
 
+/* ─────── Accessibility widget helpers ─────── */
+/* Scale body text when the user adjusts the slider */
+html[style*="--ax-font-scale"] body {
+  font-size: calc(1rem * var(--ax-font-scale, 1));
+}
+
+/* High contrast: increase weight + tighten color contrast site-wide */
+html.ax-high-contrast {
+  filter: contrast(1.25) saturate(1.1);
+}
+html.ax-high-contrast body {
+  font-weight: 500;
+}
+
+/* Underline every hyperlink */
+html.ax-underline-links a:not([aria-label="WhatsApp"]) {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+/* Pause/shorten animations and transitions */
+html.ax-reduce-motion *,
+html.ax-reduce-motion *::before,
+html.ax-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Outline every heading */
+html.ax-highlight-headings :is(h1, h2, h3, h4, h5, h6) {
+  outline: 2px dashed var(--color-peach);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 @theme inline {
   --font-heading: var(--font-google-sans), var(--font-heebo);
   --font-sans: var(--font-google-sans), var(--font-heebo);

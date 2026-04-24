@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleAnalytics } from "@/lib/analytics";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
+import { AccessibilityWidget } from "@/components/ui/AccessibilityWidget";
 import "./globals.css";
 
 // Google Sans — self-hosted from /fonts/google-sans (proprietary, user-supplied)
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased">
         <LocaleProvider>
           {children}
+          <AccessibilityWidget />
           <Toaster richColors position="top-center" dir="rtl" />
         </LocaleProvider>
         <GoogleAnalytics />

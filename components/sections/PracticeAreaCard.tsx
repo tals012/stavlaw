@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import shieldIcon from "@/figma-assets/shield-icon.svg";
 
 type Area = {
   slug: string;
@@ -11,7 +10,18 @@ type Area = {
   imageAlt: string;
 };
 
+const ICON_BY_SLUG: Record<string, string> = {
+  labor: "/icons/practice/labor.png",
+  civil: "/icons/practice/civil.png",
+  hearing: "/icons/practice/hearing.png",
+  harassment: "/icons/practice/harassment.png",
+  injunction: "/icons/practice/injunction.png",
+  rights: "/icons/practice/rights.png",
+};
+
 export function PracticeAreaCard({ area, index }: { area: Area; index: number }) {
+  const iconSrc = ICON_BY_SLUG[area.slug];
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 32 }}
@@ -25,8 +35,16 @@ export function PracticeAreaCard({ area, index }: { area: Area; index: number })
       whileHover={{ y: -6 }}
       className="group bg-navy-mid rounded-2xl p-7 border border-white/5 transition-colors duration-300 hover:border-peach/45 hover:bg-[color-mix(in_oklab,var(--color-navy-mid),var(--color-peach)_6%)]"
     >
-      <div className="w-[52px] h-[52px] border border-peach rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-peach/10 group-hover:scale-105">
-        <Image src={shieldIcon} alt="" width={22} height={22} />
+      <div className="w-[72px] h-[72px] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 overflow-hidden">
+        {iconSrc ? (
+          <Image
+            src={iconSrc}
+            alt={area.imageAlt}
+            width={72}
+            height={72}
+            className="w-full h-full object-contain"
+          />
+        ) : null}
       </div>
 
       <h3 className="mt-6 text-[22px] font-bold text-white leading-[1.2]">{area.title}</h3>
