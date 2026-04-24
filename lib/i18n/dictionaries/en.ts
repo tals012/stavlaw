@@ -125,7 +125,7 @@ export const en: Dictionary = {
     },
   },
   whyMe: {
-    eyebrow: "Why Me?",
+    eyebrow: "Why Me",
     heading: "Why me?",
     paragraphs: [
       "After five years managing complex cases at Israel's leading law firms, I know employment law from the inside.",
@@ -143,7 +143,7 @@ export const en: Dictionary = {
     dotLabel: (n) => `Go to card ${n}`,
   },
   knowFirsthand: {
-    eyebrow: "I Know This Firsthand.",
+    eyebrow: "I Know This Firsthand",
     body: "Speaking to the heart of the problem — many employees are unaware of the rights they hold. I believe that behind every legal case stands a person, a family, or a business who needs not just professional knowledge, but someone who will fight for them with determination and see the full picture.",
   },
   footer: {

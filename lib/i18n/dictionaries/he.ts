@@ -125,7 +125,7 @@ export const he: Dictionary = {
     },
   },
   whyMe: {
-    eyebrow: "Why Me?",
+    eyebrow: "Why Me",
     heading: "למה אני?",
     paragraphs: [
       "אחרי 5 שנים שבהן ניהלתי תיקים מורכבים במשרדים המובילים בארץ, אני מכירה את עולם דיני העבודה מבפנים.",
@@ -143,7 +143,7 @@ export const he: Dictionary = {
     dotLabel: (n) => `עבור לכרטיס ${n}`,
   },
   knowFirsthand: {
-    eyebrow: "I Know This Firsthand.",
+    eyebrow: "I Know This Firsthand",
     body: "לדבר על הבעיה יותר לעומק — הרבה עובדים לא מודעים לזכויות שלהם. אני מאמינה שמאחורי כל תיק משפטי עומד אדם, משפחה או עסק שזקוקים לא רק לידע מקצועי, אלא למישהי שתילחם עבורם בנחישות ותראה את התמונה המלאה.",
   },
   footer: {

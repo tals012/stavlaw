@@ -48,7 +48,7 @@ export function WhyMe() {
 
           {/* Text — FIRST in DOM → top on mobile, visual RIGHT on desktop (RTL) */}
           <div className="lg:w-[38%] lg:shrink-0">
-            <Script className="text-[clamp(2.5rem,4vw,60px)] leading-none block mb-3">
+            <Script className="text-[clamp(1.75rem,2.6vw,42px)] leading-none block mb-3">
               {whyMe.eyebrow}
             </Script>
             <h2 className="text-[clamp(2rem,3.5vw,55px)] font-bold text-navy leading-[1.173]">

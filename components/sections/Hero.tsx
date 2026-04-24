@@ -20,7 +20,7 @@ export function Hero() {
         <div className="w-full">
           <h1
             className="font-black text-white leading-[1.1]"
-            style={{ fontSize: "clamp(2rem, 4vw, 62px)" }}
+            style={{ fontSize: "clamp(1.625rem, 4vw, 62px)" }}
           >
             {dict.hero.h1Line1}
             <br />
@@ -32,19 +32,19 @@ export function Hero() {
           </h1>
 
           <p
-            className="mt-7 text-white/85 leading-[1.55]"
+            className="mt-5 text-white/85 leading-[1.5]"
             style={{ fontSize: "clamp(1rem, 1.2vw, 19px)", maxWidth: "620px" }}
           >
             {dict.hero.subLight}
           </p>
           <p
-            className="mt-3 text-white font-bold leading-[1.55]"
+            className="mt-2 text-white font-bold leading-[1.5]"
             style={{ fontSize: "clamp(1rem, 1.2vw, 19px)", maxWidth: "620px" }}
           >
             {dict.hero.subBold}
           </p>
 
-          <div className="mt-10">
+          <div className="mt-6">
             <a
               href="#contact"
               className="inline-flex items-center justify-center rounded-full bg-peach px-10 py-4 text-[18px] font-bold text-navy hover:bg-peach-600 transition-colors"

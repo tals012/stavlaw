@@ -125,7 +125,7 @@ export const ar: Dictionary = {
     },
   },
   whyMe: {
-    eyebrow: "Why Me?",
+    eyebrow: "Why Me",
     heading: "لماذا أنا؟",
     paragraphs: [
       "بعد خمس سنوات من إدارة قضايا معقّدة في المكاتب القانونية الرائدة في البلاد، أعرف عالم قانون العمل من الداخل.",
@@ -143,7 +143,7 @@ export const ar: Dictionary = {
     dotLabel: (n) => `الانتقال إلى البطاقة ${n}`,
   },
   knowFirsthand: {
-    eyebrow: "I Know This Firsthand.",
+    eyebrow: "I Know This Firsthand",
     body: "لنتحدّث عن جوهر المشكلة — كثير من العاملين لا يدركون حقوقهم. أؤمن بأن وراء كل قضية قانونية يقف إنسان أو عائلة أو عمل بحاجة ليس فقط إلى المعرفة المهنية، بل إلى من يناضل عنهم بإصرار ويرى الصورة الكاملة.",
   },
   footer: {
