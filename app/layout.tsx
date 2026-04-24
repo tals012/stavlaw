@@ -9,7 +9,7 @@ import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import { AccessibilityWidget } from "@/components/ui/AccessibilityWidget";
 import "./globals.css";
 
-// Google Sans — self-hosted from /fonts/google-sans (proprietary, user-supplied)
+// Google Sans - self-hosted from /fonts/google-sans (proprietary, user-supplied)
 const googleSans = localFont({
   src: [
     { path: "../fonts/google-sans/GoogleSans-Regular.ttf", weight: "400", style: "normal" },
@@ -21,7 +21,7 @@ const googleSans = localFont({
   variable: "--font-google-sans",
 });
 
-// Angelic Bonques Script — decorative cursive for English section headers
+// Angelic Bonques Script - decorative cursive for English section headers
 const angelic = localFont({
   src: [
     { path: "../fonts/angelic/AngelicBonquesScript.ttf", weight: "400", style: "normal" },
@@ -45,7 +45,7 @@ const allura = Allura({
   variable: "--font-allura",
 });
 
-// Playfair Display — elegant serif for numerals in the Process stepper
+// Playfair Display - elegant serif for numerals in the Process stepper
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600"],

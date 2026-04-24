@@ -1,0 +1,14 @@
+<svg width="1254" height="1254" viewBox="0 0 1254 1254" xmlns="http://www.w3.org/2000/svg">
+  <title>Rights realization icon</title>
+  <desc>Minimal clean legal employment icon, transparent background.</desc>
+  <g fill="none" stroke="#E99A72" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="627" cy="627" r="432" stroke-width="34"/>
+    <g stroke-width="42">
+
+      <rect x="425" y="360" width="405" height="540" rx="52"/>
+      <path d="M540 555 L615 630 L745 485"/>
+      <path d="M540 735 H715"/>
+      <path d="M540 810 H675"/>
+        </g>
+  </g>
+</svg>

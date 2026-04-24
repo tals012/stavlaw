@@ -1,0 +1,14 @@
+<svg width="1254" height="1254" viewBox="0 0 1254 1254" xmlns="http://www.w3.org/2000/svg">
+  <title>Unlawful dismissal icon</title>
+  <desc>Minimal clean legal employment icon, transparent background.</desc>
+  <g fill="none" stroke="#E99A72" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="627" cy="627" r="432" stroke-width="34"/>
+    <g stroke-width="42">
+
+      <path d="M430 360 H700 L825 485 V865 H430 Z"/>
+      <path d="M700 360 V485 H825"/>
+      <circle cx="635" cy="650" r="150"/>
+      <path d="M530 545 L740 755"/>
+        </g>
+  </g>
+</svg>

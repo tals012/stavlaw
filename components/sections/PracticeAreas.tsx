@@ -32,7 +32,7 @@ export function PracticeAreas() {
           ))}
         </div>
 
-        {/* Peach-bordered navy CTA panel — centered heading + description + CTA */}
+        {/* Peach-bordered navy CTA panel - centered heading + description + CTA */}
         <div className="mt-10 border-2 border-peach rounded-2xl px-8 py-14 md:px-16 md:py-16 bg-navy-ink text-center">
           <h3 className="text-[clamp(1.75rem,3vw,42px)] font-bold text-white leading-[1.2]">
             {pa.panelHeading}

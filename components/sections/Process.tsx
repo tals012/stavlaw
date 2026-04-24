@@ -63,7 +63,7 @@ export function Process() {
     <section id="process" className="bg-cream-100 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0 lg:items-start">
-          {/* Heading — col 1 (visual-right in RTL); sticky on desktop so it scrolls with the stepper */}
+          {/* Heading - col 1 (visual-right in RTL); sticky on desktop so it scrolls with the stepper */}
           <div className="lg:pt-4 lg:order-1 lg:sticky lg:top-24 lg:self-start">
             <Script className="text-[clamp(2.5rem,4vw,60px)] leading-none block mb-2">
               {dict.process.eyebrow}
@@ -76,14 +76,14 @@ export function Process() {
             </p>
           </div>
 
-          {/* Stepper — col 2 (visual-left in RTL) */}
+          {/* Stepper - col 2 (visual-left in RTL) */}
           <div ref={containerRef} className="relative lg:order-2">
             {/* Dashed base line at the bubble column */}
             <div
               aria-hidden
               className="hidden lg:block pointer-events-none absolute top-[46px] bottom-[46px] start-[41px] w-0 border-s-2 border-dashed border-peach/35"
             />
-            {/* Peach progress fill line — driven by scroll */}
+            {/* Peach progress fill line - driven by scroll */}
             <motion.div
               aria-hidden
               style={{ height: lineHeight }}
@@ -194,7 +194,7 @@ function StepRow({
         }}
         className="relative shrink-0 flex items-center justify-center w-[64px] h-[64px] lg:w-[88px] lg:h-[88px] rounded-2xl lg:rounded-[20px] border-2 shadow-lg z-10 overflow-hidden"
       >
-        {/* Number — shown when inactive */}
+        {/* Number - shown when inactive */}
         <motion.span
           style={{ opacity: numberOpacity }}
           className="absolute font-[family-name:var(--font-playfair)] font-medium text-[26px] lg:text-[34px] leading-none text-peach tabular-nums tracking-tight"
@@ -202,7 +202,7 @@ function StepRow({
           {String(step.n).padStart(2, "0")}
         </motion.span>
 
-        {/* Lottie icon — mounts and autoplays when activation is reached */}
+        {/* Lottie icon - mounts and autoplays when activation is reached */}
         <motion.div
           style={{ opacity: iconOpacity, scale: iconScale }}
           className="absolute w-[44px] h-[44px] lg:w-[56px] lg:h-[56px] pointer-events-none"
@@ -218,7 +218,7 @@ function StepRow({
         </motion.div>
       </motion.div>
 
-      {/* Connector — short horizontal line that fills from bubble to card */}
+      {/* Connector - short horizontal line that fills from bubble to card */}
       <div
         aria-hidden
         className="relative shrink-0 w-5 lg:w-7 h-[2px] bg-peach/15 overflow-hidden"

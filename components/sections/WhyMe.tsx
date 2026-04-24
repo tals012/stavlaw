@@ -46,7 +46,7 @@ export function WhyMe() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-12">
 
-          {/* Text — FIRST in DOM → top on mobile, visual RIGHT on desktop (RTL) */}
+          {/* Text - FIRST in DOM → top on mobile, visual RIGHT on desktop (RTL) */}
           <div className="lg:w-[38%] lg:shrink-0">
             <Script className="text-[clamp(1.75rem,2.6vw,42px)] leading-none block mb-3">
               {whyMe.eyebrow}
@@ -63,7 +63,7 @@ export function WhyMe() {
             </div>
           </div>
 
-          {/* Slider — SECOND in DOM → below text on mobile, visual LEFT on desktop (RTL).
+          {/* Slider - SECOND in DOM → below text on mobile, visual LEFT on desktop (RTL).
               On desktop, extend inline-end (left in RTL) to viewport edge so cards bleed off the left. */}
           <div className="w-full lg:flex-1 lg:min-w-0">
             <div
@@ -90,7 +90,7 @@ export function WhyMe() {
               </div>
             </div>
 
-            {/* Controls — constrained under the slider's non-bleed area */}
+            {/* Controls - constrained under the slider's non-bleed area */}
             <div className="mt-8 flex items-center gap-6">
               <div className="flex items-center gap-3">
                 <button

@@ -16,7 +16,7 @@ export function Hero() {
       <div className="absolute start-0 end-0 top-0 h-[3px] bg-peach" />
 
       <div className="mx-auto w-full max-w-[1600px] px-[clamp(1rem,4vw,4rem)] pt-24 pb-14 md:pt-28 md:pb-16 grid gap-10 md:grid-cols-[1.3fr_1fr] items-center">
-        {/* RIGHT col (RTL: 1st child) — text block. In RTL, block default is text-start = right, so NO text-end. */}
+        {/* RIGHT col (RTL: 1st child) - text block. In RTL, block default is text-start = right, so NO text-end. */}
         <div className="w-full">
           <h1
             className="font-black text-white leading-[1.1]"
@@ -55,7 +55,7 @@ export function Hero() {
 
         </div>
 
-        {/* LEFT col (RTL: 2nd child) — square photo card with floating pill overlays + straddling cursive */}
+        {/* LEFT col (RTL: 2nd child) - square photo card with floating pill overlays + straddling cursive */}
         <div className="relative w-full max-w-[580px] justify-self-start">
           <div className="relative aspect-square rounded-[22px] overflow-hidden">
             <Image
@@ -67,18 +67,18 @@ export function Hero() {
               className="object-cover grayscale"
             />
 
-            {/* Pill overlays — staggered cascade animation */}
+            {/* Pill overlays - staggered cascade animation */}
             <HeroPills pills={dict.hero.pills} />
           </div>
 
-          {/* Cursive "You Are Not Alone." — white, smaller, anchored to the visual-left (end) edge of the square, straddling the bottom */}
+          {/* Cursive "You Are Not Alone." - white, smaller, anchored to the visual-left (end) edge of the square, straddling the bottom */}
           <Script className="pointer-events-none absolute bottom-0 end-2 translate-y-1/2 -translate-x-2 text-white text-[clamp(1.5rem,2.6vw,44px)] leading-none whitespace-nowrap">
             {dict.hero.scriptAside}
           </Script>
         </div>
       </div>
 
-      {/* Scroll indicator — centered below the hero content, clicks to I Know This Firsthand section */}
+      {/* Scroll indicator - centered below the hero content, clicks to I Know This Firsthand section */}
       <div className="flex justify-center pt-4 pb-10 md:pt-5 md:pb-12">
         <ScrollIndicator targetId="know-firsthand" ariaLabel={dict.knowFirsthand.eyebrow} />
       </div>

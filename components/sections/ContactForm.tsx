@@ -154,7 +154,7 @@ export function ContactForm() {
             {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message.message}</p>}
           </div>
 
-          {/* Disclaimer checkbox — justify-start in RTL = visual right */}
+          {/* Disclaimer checkbox - justify-start in RTL = visual right */}
           <div className="flex items-center justify-start gap-2">
             <div className="w-[20px] h-[20px] border border-white rounded-[5px] shrink-0" />
             <span className="text-[13px] text-white">{form.disclaimer}</span>

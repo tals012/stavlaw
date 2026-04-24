@@ -40,7 +40,7 @@ export async function sendContactEmail(
     from: ctx.from,
     to: ctx.to,
     reply_to: input.email,
-    subject: `פנייה חדשה מהאתר — ${input.name}`,
+    subject: `פנייה חדשה מהאתר - ${input.name}`,
     html: buildEmailHtml(input),
     text: buildEmailText(input),
   });

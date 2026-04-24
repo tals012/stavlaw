@@ -1,0 +1,14 @@
+<svg width="1254" height="1254" viewBox="0 0 1254 1254" xmlns="http://www.w3.org/2000/svg">
+  <title>Employee representation icon</title>
+  <desc>Minimal clean legal employment icon, transparent background.</desc>
+  <g fill="none" stroke="#E99A72" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="627" cy="627" r="432" stroke-width="34"/>
+    <g stroke-width="42">
+
+      <circle cx="575" cy="485" r="86"/>
+      <path d="M405 805 Q430 665 575 665 Q720 665 745 805"/>
+      <path d="M725 470 L865 520 V640 Q865 755 725 825 Q585 755 585 640 V520 Z"/>
+      <path d="M665 635 L715 682 L795 585"/>
+        </g>
+  </g>
+</svg>

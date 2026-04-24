@@ -40,7 +40,7 @@ export function Testimonials() {
                 key={idx}
                 className="w-full shrink-0 bg-navy rounded-[20px] grid grid-cols-1 md:grid-cols-[1fr_380px] overflow-hidden"
               >
-                {/* Case text — FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
+                {/* Case text - FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
                 <div className="p-10 flex flex-col justify-center gap-4">
                   <div>
                     <p className="text-peach text-[22px] font-bold">{item.author} |</p>
@@ -52,7 +52,7 @@ export function Testimonials() {
                   </p>
                 </div>
 
-                {/* Photo — SECOND in DOM → visual LEFT in RTL */}
+                {/* Photo - SECOND in DOM → visual LEFT in RTL */}
                 <div className="relative min-h-[300px] md:min-h-[440px]">
                   <Image
                     src={caseStudy}

@@ -11,12 +11,12 @@ type Area = {
 };
 
 const ICON_BY_SLUG: Record<string, string> = {
-  labor: "/icons/practice/labor.png",
-  civil: "/icons/practice/civil.png",
-  hearing: "/icons/practice/hearing.png",
-  harassment: "/icons/practice/harassment.png",
-  injunction: "/icons/practice/injunction.png",
-  rights: "/icons/practice/rights.png",
+  labor: "/icons/practice/labor.svg",
+  civil: "/icons/practice/civil.svg",
+  hearing: "/icons/practice/hearing.svg",
+  harassment: "/icons/practice/harassment.svg",
+  injunction: "/icons/practice/injunction.svg",
+  rights: "/icons/practice/rights.svg",
 };
 
 export function PracticeAreaCard({ area, index }: { area: Area; index: number }) {
@@ -35,13 +35,13 @@ export function PracticeAreaCard({ area, index }: { area: Area; index: number })
       whileHover={{ y: -6 }}
       className="group bg-navy-mid rounded-2xl p-7 border border-white/5 transition-colors duration-300 hover:border-peach/45 hover:bg-[color-mix(in_oklab,var(--color-navy-mid),var(--color-peach)_6%)]"
     >
-      <div className="w-[72px] h-[72px] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105 overflow-hidden">
+      <div className="w-[88px] h-[88px] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
         {iconSrc ? (
           <Image
             src={iconSrc}
             alt={area.imageAlt}
-            width={72}
-            height={72}
+            width={88}
+            height={88}
             className="w-full h-full object-contain"
           />
         ) : null}

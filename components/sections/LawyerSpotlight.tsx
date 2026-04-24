@@ -11,7 +11,7 @@ export function LawyerSpotlight() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-          {/* Text — FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
+          {/* Text - FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
           <div>
             <h2
               className="font-bold text-white leading-[1.173]"
@@ -30,7 +30,7 @@ export function LawyerSpotlight() {
             </a>
           </div>
 
-          {/* Image — SECOND in DOM → visual LEFT in RTL */}
+          {/* Image - SECOND in DOM → visual LEFT in RTL */}
           <div
             className="relative rounded-[20px] overflow-hidden aspect-[3/2] w-full shadow-xl"
           >

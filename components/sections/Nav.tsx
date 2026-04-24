@@ -67,7 +67,7 @@ export function Nav() {
           ))}
         </ul>
 
-        {/* Mobile hamburger — visible below lg, sits on the visual-start side (opposite of logo) */}
+        {/* Mobile hamburger - visible below lg, sits on the visual-start side (opposite of logo) */}
         <button
           type="button"
           onClick={() => setMobileOpen(true)}
