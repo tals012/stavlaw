@@ -13,7 +13,15 @@ export type ProcessStep = { n: number; title: string; blurb: string };
 
 export type SiteContent = {
   brand: { name: string; initials: string };
-  hero: { h1: string; sub: string; ctaLabel: string };
+  hero: {
+    h1Line1: string;
+    h1Line2Pre: string;
+    h1Line2Underline: string;
+    subLight: string;
+    subBold: string;
+    ctaLabel: string;
+    pills: Array<{ label: string; position: "top" | "mid" | "bottom" }>;
+  };
   about: {
     paragraphs: string[];
     portraitAlt: string;
