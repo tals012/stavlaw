@@ -154,10 +154,33 @@ export function ContactForm() {
             {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message.message}</p>}
           </div>
 
-          {/* Disclaimer checkbox - justify-start in RTL = visual right */}
-          <div className="flex items-center justify-start gap-2">
-            <div className="w-[20px] h-[20px] border border-white rounded-[5px] shrink-0" />
-            <span className="text-[13px] text-white">{form.disclaimer}</span>
+          {/* Disclaimers - justify-start in RTL = visual right */}
+          <div className="space-y-2.5">
+            <label className="flex items-start justify-start gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                {...register("consentLocation")}
+                aria-invalid={!!errors.consentLocation}
+                className="mt-[3px] h-[18px] w-[18px] shrink-0 appearance-none rounded-[5px] border border-white bg-transparent checked:bg-[#e79c7d] checked:border-[#e79c7d] focus:outline-none focus:ring-2 focus:ring-[#e79c7d]/40 cursor-pointer relative checked:after:content-['✓'] checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-[12px] checked:after:font-bold checked:after:text-[#30303b]"
+              />
+              <span className="text-[13px] text-white leading-snug">
+                משרד עו״ד סתיו אליהו שוקרון ממוקם בבאר שבע. אני מאשר/ת שזה רלוונטי עבורי.
+              </span>
+            </label>
+            <label className="flex items-start justify-start gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                {...register("consentMarketing")}
+                aria-invalid={!!errors.consentMarketing}
+                className="mt-[3px] h-[18px] w-[18px] shrink-0 appearance-none rounded-[5px] border border-white bg-transparent checked:bg-[#e79c7d] checked:border-[#e79c7d] focus:outline-none focus:ring-2 focus:ring-[#e79c7d]/40 cursor-pointer relative checked:after:content-['✓'] checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-[12px] checked:after:font-bold checked:after:text-[#30303b]"
+              />
+              <span className="text-[13px] text-white leading-snug">
+                אני מאשר/ת קבלת דיוור ומידע פרסומי ואת תנאי השימוש ו־מדיניות הפרטיות באתר.
+              </span>
+            </label>
+            {(errors.consentLocation || errors.consentMarketing) && (
+              <p className="text-sm text-red-400">יש לאשר את שני התנאים</p>
+            )}
           </div>
 
           {/* Submit */}

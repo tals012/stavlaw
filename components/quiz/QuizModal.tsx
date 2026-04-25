@@ -63,6 +63,8 @@ export function QuizModal({ open, onClose }: { open: boolean; onClose: () => voi
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [contact, setContact] = useState({ name: "", phone: "", email: "" });
+  const [consentLocation, setConsentLocation] = useState(false);
+  const [consentMarketing, setConsentMarketing] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
@@ -86,6 +88,8 @@ export function QuizModal({ open, onClose }: { open: boolean; onClose: () => voi
       setStep(0);
       setAnswers({});
       setContact({ name: "", phone: "", email: "" });
+      setConsentLocation(false);
+      setConsentMarketing(false);
       setDone(false);
     }
   }, [open]);
@@ -113,6 +117,8 @@ export function QuizModal({ open, onClose }: { open: boolean; onClose: () => voi
           name: contact.name,
           phone: contact.phone,
           email: contact.email,
+          consentLocation,
+          consentMarketing,
           honeypot,
         }),
       });
@@ -189,6 +195,10 @@ export function QuizModal({ open, onClose }: { open: boolean; onClose: () => voi
                 <ContactStep
                   contact={contact}
                   setContact={setContact}
+                  consentLocation={consentLocation}
+                  setConsentLocation={setConsentLocation}
+                  consentMarketing={consentMarketing}
+                  setConsentMarketing={setConsentMarketing}
                   honeypot={honeypot}
                   setHoneypot={setHoneypot}
                   submitting={submitting}
@@ -273,6 +283,10 @@ function QuestionStep({
 function ContactStep({
   contact,
   setContact,
+  consentLocation,
+  setConsentLocation,
+  consentMarketing,
+  setConsentMarketing,
   honeypot,
   setHoneypot,
   submitting,
@@ -280,12 +294,21 @@ function ContactStep({
 }: {
   contact: { name: string; phone: string; email: string };
   setContact: (c: { name: string; phone: string; email: string }) => void;
+  consentLocation: boolean;
+  setConsentLocation: (v: boolean) => void;
+  consentMarketing: boolean;
+  setConsentMarketing: (v: boolean) => void;
   honeypot: string;
   setHoneypot: (s: string) => void;
   submitting: boolean;
   onSubmit: () => void;
 }) {
-  const canSubmit = contact.name.trim().length >= 2 && /^[0-9+\-\s()]{7,20}$/.test(contact.phone) && /.+@.+\..+/.test(contact.email);
+  const canSubmit =
+    contact.name.trim().length >= 2 &&
+    /^[0-9+\-\s()]{7,20}$/.test(contact.phone) &&
+    /.+@.+\..+/.test(contact.email) &&
+    consentLocation &&
+    consentMarketing;
 
   return (
     <div>
@@ -330,6 +353,30 @@ function ContactStep({
           aria-label="אימייל"
           className="w-full bg-navy-mid border border-white/20 rounded-[14px] h-12 px-4 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-peach"
         />
+      </div>
+      <div className="mt-5 space-y-2.5">
+        <label className="flex items-start justify-start gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={consentLocation}
+            onChange={(e) => setConsentLocation(e.target.checked)}
+            className="mt-[3px] h-[18px] w-[18px] shrink-0 appearance-none rounded-[5px] border border-white/40 bg-transparent checked:bg-peach checked:border-peach focus:outline-none focus:ring-2 focus:ring-peach/40 cursor-pointer relative checked:after:content-['✓'] checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-[12px] checked:after:font-bold checked:after:text-text-dark"
+          />
+          <span className="text-[13px] text-white/85 leading-snug">
+            משרד עו״ד סתיו אליהו שוקרון ממוקם בבאר שבע. אני מאשר/ת שזה רלוונטי עבורי.
+          </span>
+        </label>
+        <label className="flex items-start justify-start gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={consentMarketing}
+            onChange={(e) => setConsentMarketing(e.target.checked)}
+            className="mt-[3px] h-[18px] w-[18px] shrink-0 appearance-none rounded-[5px] border border-white/40 bg-transparent checked:bg-peach checked:border-peach focus:outline-none focus:ring-2 focus:ring-peach/40 cursor-pointer relative checked:after:content-['✓'] checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-[12px] checked:after:font-bold checked:after:text-text-dark"
+          />
+          <span className="text-[13px] text-white/85 leading-snug">
+            אני מאשר/ת קבלת דיוור ומידע פרסומי ואת תנאי השימוש ו־מדיניות הפרטיות באתר.
+          </span>
+        </label>
       </div>
       <button
         type="button"
