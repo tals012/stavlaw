@@ -34,7 +34,7 @@ export function AboutBrief() {
             >
               {dict.hero.ctaLabel}
             </a>
-            <Script className="order-2 text-[clamp(2rem,2.5vw,44px)] text-text-mid md:order-2">
+            <Script className="order-2 text-[clamp(2rem,2.5vw,44px)] text-text-mid md:order-2 [transform:rotate(-5deg)] [transform-origin:bottom_right]">
               {dict.about.signature}
             </Script>
           </div>
