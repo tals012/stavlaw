@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Script } from "@/components/ui/Script";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
@@ -9,7 +10,13 @@ export function AboutBrief() {
 
   return (
     <section id="about" className="bg-cream-100 pt-8 pb-14 md:py-20">
-      <div className="mx-auto grid max-w-6xl items-start gap-8 px-6 md:gap-12 md:grid-cols-[1.8fr_1fr]">
+      <motion.div
+        initial={{ opacity: 0, y: 36 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15, margin: "0px 0px -10% 0px" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto grid max-w-6xl items-start gap-8 px-6 md:gap-12 md:grid-cols-[1.8fr_1fr]"
+      >
 
         {/* Bio - FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
         <div className="py-4">
@@ -52,7 +59,7 @@ export function AboutBrief() {
             className="object-cover object-top"
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
