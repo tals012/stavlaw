@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Script } from "@/components/ui/Script";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 import caseStudyFallback from "@/figma-assets/case-study.jpg";
@@ -74,31 +75,31 @@ export function Testimonials() {
             })}
           </div>
 
-          {/* Desktop arrows (hidden on mobile) */}
+          {/* Desktop arrows (hidden on mobile). RTL: prev=visual right (start), next=visual left (end) */}
           <button
             onClick={() => go(-1)}
             aria-label={t.prev}
-            className="hidden md:flex absolute top-1/2 -translate-y-1/2 end-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy items-center justify-center text-2xl font-bold hover:bg-peach hover:text-white transition-colors shadow-md"
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 start-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy items-center justify-center hover:bg-peach hover:text-white transition-colors shadow-md"
           >
-            ›
+            <ChevronRight className="h-5 w-5" />
           </button>
           <button
             onClick={() => go(1)}
             aria-label={t.next}
-            className="hidden md:flex absolute top-1/2 -translate-y-1/2 start-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy items-center justify-center text-2xl font-bold hover:bg-peach hover:text-white transition-colors shadow-md"
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 end-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy items-center justify-center hover:bg-peach hover:text-white transition-colors shadow-md"
           >
-            ‹
+            <ChevronLeft className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Controls row: arrows (mobile) + dots */}
+        {/* Controls row: arrows (mobile) + dots. RTL flex: first DOM child = visual right = prev */}
         <div className="mt-5 md:mt-6 flex items-center justify-center gap-3">
           <button
             onClick={() => go(-1)}
             aria-label={t.prev}
-            className="md:hidden w-9 h-9 rounded-full bg-navy/90 text-cream-100 flex items-center justify-center text-xl font-bold hover:bg-peach hover:text-navy transition-colors shadow"
+            className="md:hidden w-9 h-9 rounded-full bg-navy/90 text-cream-100 flex items-center justify-center hover:bg-peach hover:text-navy transition-colors shadow"
           >
-            ›
+            <ChevronRight className="h-4 w-4" />
           </button>
 
           <div className="flex justify-center gap-2">
@@ -117,9 +118,9 @@ export function Testimonials() {
           <button
             onClick={() => go(1)}
             aria-label={t.next}
-            className="md:hidden w-9 h-9 rounded-full bg-navy/90 text-cream-100 flex items-center justify-center text-xl font-bold hover:bg-peach hover:text-navy transition-colors shadow"
+            className="md:hidden w-9 h-9 rounded-full bg-navy/90 text-cream-100 flex items-center justify-center hover:bg-peach hover:text-navy transition-colors shadow"
           >
-            ‹
+            <ChevronLeft className="h-4 w-4" />
           </button>
         </div>
       </div>
