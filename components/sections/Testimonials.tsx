@@ -43,8 +43,8 @@ export function Testimonials() {
                   key={idx}
                   className="w-full shrink-0 bg-navy rounded-[20px] grid grid-cols-1 md:grid-cols-[1fr_380px] overflow-hidden"
                 >
-                  {/* Photo - mobile first (top), desktop visual-LEFT (DOM second) */}
-                  <div className="relative h-[200px] md:h-auto md:min-h-[440px] md:order-2">
+                  {/* Photo - mobile bottom, desktop visual-LEFT (DOM second) */}
+                  <div className="relative h-[200px] md:h-auto md:min-h-[440px] order-2 md:order-2">
                     <Image
                       src={src}
                       alt={item.caseType}
@@ -55,8 +55,8 @@ export function Testimonials() {
                     <div className="absolute inset-0 bg-navy/30" />
                   </div>
 
-                  {/* Case text */}
-                  <div className="p-6 md:p-10 flex flex-col justify-center gap-3 md:gap-4 md:order-1">
+                  {/* Case text - mobile top, desktop visual-RIGHT */}
+                  <div className="p-6 md:p-10 flex flex-col justify-center gap-3 md:gap-4 order-1 md:order-1">
                     <div>
                       <p className="text-peach text-[17px] md:text-[22px] font-bold leading-tight">
                         {item.author} |
