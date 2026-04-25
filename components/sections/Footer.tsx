@@ -23,7 +23,7 @@ export function Footer() {
             <span className="inline-flex items-center gap-2 whitespace-nowrap">
               {dict.footer.designedBy}
               <a
-                href="https://www.lh-digital.com"
+                href="https://lhdigital.co.il"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LH Digital"
@@ -36,7 +36,7 @@ export function Footer() {
             <span className="inline-flex items-center gap-2 whitespace-nowrap">
               {dict.footer.builtBy}
               <a
-                href="https://tls.dev"
+                href="https://tls.codes"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TLS"
