@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Script } from "@/components/ui/Script";
+import { HighlightedText, DwellHighlight } from "@/components/ui/HighlightedText";
 import { HeroPills } from "@/components/sections/HeroPills";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
@@ -37,12 +38,14 @@ export function Hero() {
           >
             {dict.hero.subLight}
           </p>
-          <p
-            className="mt-2 text-white font-bold leading-[1.5]"
-            style={{ fontSize: "clamp(1rem, 1.2vw, 19px)", maxWidth: "620px" }}
-          >
-            {dict.hero.subBold}
-          </p>
+          <DwellHighlight>
+            <p
+              className="mt-2 text-white leading-[1.5]"
+              style={{ fontSize: "clamp(1rem, 1.2vw, 19px)", maxWidth: "620px" }}
+            >
+              <HighlightedText text={dict.hero.subBold} />
+            </p>
+          </DwellHighlight>
 
           <div className="mt-6">
             <a

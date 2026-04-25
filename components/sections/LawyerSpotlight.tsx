@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { HighlightedText, DwellHighlight } from "@/components/ui/HighlightedText";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function LawyerSpotlight() {
@@ -19,9 +20,11 @@ export function LawyerSpotlight() {
             >
               {dict.spotlight.headline}
             </h2>
-            <p className="mt-5 text-[18px] text-white/80 leading-[1.5]">
-              {dict.spotlight.body}
-            </p>
+            <DwellHighlight>
+              <p className="mt-5 text-[18px] text-white/80 leading-[1.5]">
+                <HighlightedText text={dict.spotlight.body} />
+              </p>
+            </DwellHighlight>
             <a
               href="#contact"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-peach border-2 border-peach px-8 py-3 text-[18px] font-bold text-text-dark hover:bg-peach-600 hover:border-peach-600 transition-colors"

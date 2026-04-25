@@ -1,6 +1,7 @@
 "use client";
 
 import { Script } from "@/components/ui/Script";
+import { HighlightedText, DwellHighlight } from "@/components/ui/HighlightedText";
 import { PracticeAreaCard } from "./PracticeAreaCard";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
@@ -37,9 +38,11 @@ export function PracticeAreas() {
           <h3 className="text-[clamp(1.75rem,3vw,42px)] font-bold text-white leading-[1.2]">
             {pa.panelHeading}
           </h3>
-          <p className="mt-5 text-[15px] text-white/75 leading-[1.6] max-w-2xl mx-auto">
-            {pa.panelBody}
-          </p>
+          <DwellHighlight>
+            <p className="mt-5 text-[15px] text-white/75 leading-[1.6] max-w-2xl mx-auto">
+              <HighlightedText text={pa.panelBody} />
+            </p>
+          </DwellHighlight>
           <a
             href="#contact"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-peach px-10 py-3 text-[18px] font-bold text-navy hover:bg-peach-600 transition-colors"

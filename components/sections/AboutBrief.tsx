@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Script } from "@/components/ui/Script";
+import { HighlightedText, DwellHighlight } from "@/components/ui/HighlightedText";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function AboutBrief() {
@@ -24,13 +25,13 @@ export function AboutBrief() {
           <h2 className="text-[38px] font-bold text-navy leading-[1.116] mt-1">
             {dict.about.namePlate}
           </h2>
-          <div className="mt-6 space-y-4">
+          <DwellHighlight className="mt-6 space-y-4">
             {dict.about.paragraphs.map((p, i) => (
               <p key={i} className="text-[17px] text-navy/80 leading-relaxed">
-                {p}
+                <HighlightedText text={p} />
               </p>
             ))}
-          </div>
+          </DwellHighlight>
 
           {/* CTA on visual-right, signature on visual-left - in RTL flex row, first child is visual-right.
               On mobile, stack vertically (signature above button) to avoid collision. */}

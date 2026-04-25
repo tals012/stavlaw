@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Script } from "@/components/ui/Script";
+import { HighlightedText, DwellHighlight } from "@/components/ui/HighlightedText";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function WhyMe() {
@@ -54,13 +55,13 @@ export function WhyMe() {
             <h2 className="text-[clamp(2rem,3.5vw,55px)] font-bold text-navy leading-[1.173]">
               {whyMe.heading}
             </h2>
-            <div className="mt-5 space-y-4">
+            <DwellHighlight className="mt-5 space-y-4">
               {whyMe.paragraphs.map((p, i) => (
                 <p key={i} className="text-[18px] text-navy/80 leading-relaxed">
-                  {p}
+                  <HighlightedText text={p} />
                 </p>
               ))}
-            </div>
+            </DwellHighlight>
           </div>
 
           {/* Slider - SECOND in DOM → below text on mobile, visual LEFT on desktop (RTL).
