@@ -152,6 +152,7 @@ export const he: Dictionary = {
   footer: {
     legal: "תקנון האתר | הצהרת פרטיות",
     copyright: "כל הזכויות שמורות | 2026",
-    attribution: "על ידי UC Digital | בנייה עיצוב מיתוג",
+    designedBy: "הדף אופיין ועוצב ע״י",
+    builtBy: "ונבנה ע״י",
   },
 };

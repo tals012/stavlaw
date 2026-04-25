@@ -152,6 +152,7 @@ export const ar: Dictionary = {
   footer: {
     legal: "شروط الموقع | سياسة الخصوصية",
     copyright: "جميع الحقوق محفوظة | 2026",
-    attribution: "بواسطة UC Digital | تطوير وتصميم وعلامة تجارية",
+    designedBy: "تصميم بواسطة",
+    builtBy: "تطوير بواسطة",
   },
 };

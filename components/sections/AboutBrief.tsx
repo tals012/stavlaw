@@ -45,7 +45,7 @@ export function AboutBrief() {
           className="relative rounded-[20px] overflow-hidden shadow-xl aspect-[3/4] w-full max-w-[360px] justify-self-start"
         >
           <Image
-            src="/stav-portrait.png"
+            src="/nice-to-meet.jpg"
             alt={dict.about.portraitAlt}
             fill
             sizes="(max-width: 768px) 100vw, 360px"

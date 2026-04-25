@@ -152,6 +152,7 @@ export const en: Dictionary = {
   footer: {
     legal: "Site Terms | Privacy Policy",
     copyright: "All rights reserved | 2026",
-    attribution: "By UC Digital | Development, Design & Branding",
+    designedBy: "Designed by",
+    builtBy: "Built by",
   },
 };

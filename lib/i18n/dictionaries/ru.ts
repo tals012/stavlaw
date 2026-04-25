@@ -152,6 +152,7 @@ export const ru: Dictionary = {
   footer: {
     legal: "Условия сайта | Политика конфиденциальности",
     copyright: "Все права защищены | 2026",
-    attribution: "UC Digital | Разработка, дизайн и брендинг",
+    designedBy: "Дизайн от",
+    builtBy: "Разработка от",
   },
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function Footer() {
@@ -15,11 +16,35 @@ export function Footer() {
           {/* Center: legal links */}
           <span>{dict.footer.legal}</span>
 
-          {/* Left (RTL source end): copyright + attribution */}
-          <div className="flex items-center gap-4">
+          {/* Left (RTL source end): copyright + credits */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span>{dict.footer.copyright}</span>
             <span className="text-cream-100/50">|</span>
-            <span>{dict.footer.attribution}</span>
+            <span className="inline-flex items-center gap-2 whitespace-nowrap">
+              {dict.footer.designedBy}
+              <a
+                href="https://www.lh-digital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LH Digital"
+                className="inline-flex items-center hover:opacity-80 transition-opacity"
+              >
+                <Image src="/credits/lh-logo.svg" alt="LH Digital" width={84} height={24} className="h-[18px] w-auto" />
+              </a>
+            </span>
+            <span className="text-cream-100/50">|</span>
+            <span className="inline-flex items-center gap-2 whitespace-nowrap">
+              {dict.footer.builtBy}
+              <a
+                href="https://tls.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TLS"
+                className="inline-flex items-center hover:opacity-80 transition-opacity"
+              >
+                <Image src="/credits/tls-logo.svg" alt="TLS" width={22} height={22} className="h-[20px] w-auto" />
+              </a>
+            </span>
           </div>
         </div>
       </div>

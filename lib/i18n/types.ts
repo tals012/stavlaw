@@ -112,6 +112,7 @@ export type Dictionary = {
   footer: {
     legal: string;
     copyright: string;
-    attribution: string;
+    designedBy: string;
+    builtBy: string;
   };
 };
