@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function Footer() {
@@ -14,7 +15,15 @@ export function Footer() {
           <span className="font-medium">{dict.brand.name}</span>
 
           {/* Center: legal links */}
-          <span>{dict.footer.legal}</span>
+          <span className="inline-flex items-center gap-x-2 flex-wrap">
+            <Link href="/terms" className="hover:text-peach transition-colors">
+              {dict.footer.termsLabel}
+            </Link>
+            <span className="text-cream-100/50">|</span>
+            <Link href="/privacy" className="hover:text-peach transition-colors">
+              {dict.footer.privacyLabel}
+            </Link>
+          </span>
 
           {/* Left (RTL source end): copyright + credits */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">

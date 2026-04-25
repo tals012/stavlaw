@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 const STORAGE_KEY = "stavlaw_cookie_consent_v1";
@@ -56,7 +57,11 @@ export function CookieBanner() {
                 שימוש בעוגיות
               </p>
               <p className="mt-1 text-[13px] text-white/75 leading-snug">
-                אנו משתמשים בעוגיות כדי לשפר את חוויית הגלישה ולנתח שימוש באתר. בלחיצה על &quot;אישור&quot; הינך מסכים/ה למדיניות הפרטיות ולתנאי השימוש.
+                אנו משתמשים בעוגיות כדי לשפר את חוויית הגלישה ולנתח שימוש באתר. בלחיצה על &quot;אישור&quot; הינך מסכים/ה ל
+                <Link href="/privacy" className="underline hover:text-peach transition-colors">מדיניות הפרטיות</Link>
+                {" "}ול
+                <Link href="/terms" className="underline hover:text-peach transition-colors">תנאי השימוש</Link>
+                .
               </p>
             </div>
             <div className="flex shrink-0 gap-2">

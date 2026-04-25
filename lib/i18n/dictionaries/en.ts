@@ -150,7 +150,8 @@ export const en: Dictionary = {
     body: "Many employees are unaware of the rights they hold. I believe that behind every legal case stands a person, a family, or a business who needs not just professional knowledge, but someone who will fight for them with determination and see the full picture.",
   },
   footer: {
-    legal: "Site Terms | Privacy Policy",
+    termsLabel: "Site Terms",
+    privacyLabel: "Privacy Policy",
     copyright: "All rights reserved | 2026",
     designedBy: "Designed by",
     builtBy: "Built by",

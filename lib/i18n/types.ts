@@ -110,7 +110,8 @@ export type Dictionary = {
     body: string;
   };
   footer: {
-    legal: string;
+    termsLabel: string;
+    privacyLabel: string;
     copyright: string;
     designedBy: string;
     builtBy: string;
