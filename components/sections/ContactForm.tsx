@@ -44,9 +44,9 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden isolate">
       {/* Background image with dark overlay */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <Image
           src={aboutPortrait}
           alt=""

@@ -38,10 +38,10 @@ export const en: Dictionary = {
   about: {
     scriptEyebrow: "I Know This Firsthand.",
     introParagraph:
-      "Let me speak more deeply about the problem - many employees are unaware of their rights. I believe that behind every legal case stands a person, a family, or a business who needs not only professional knowledge, but someone who will fight for them with determination and see the full picture.",
+      "Many employees are unaware of their rights. I believe that behind every legal case stands a person, a family, or a business who needs not only professional knowledge, but someone who will fight for them with determination and see the full picture.",
     paragraphs: [
       "I believe that behind every legal case stands a person, a family, or a business who needs not only professional knowledge, but someone who will fight for them with determination and see the full picture.",
-      "My professional path combines academic depth - a Master of Laws (LL.M.) from Bar-Ilan University - with rich practical experience from the field. As an attorney authorized to serve as a receiver in enforcement cases, I know employment law from the inside - both from the employees' side and the employers' side.",
+      "Over the years Stav has worked at Israel's leading law firms, representing both employers and employees - from large and small companies to corporations. That experience on both sides of the table allows her to know employment law inside and out, anticipate the moves ahead and build a precise strategy for every case.",
     ],
     portraitAlt: "Stav Eliyahu Shukrun, Attorney at Law",
     greeting: "Nice to meet you,",
@@ -54,11 +54,11 @@ export const en: Dictionary = {
     sub: "Professional and personal representation at every stage of the legal process against your employer",
     panelHeading: "I am with you for every question and every issue",
     panelBody:
-      "My professional path combines academic depth - a Master of Laws (LL.M.) from Bar-Ilan University - with rich practical experience from the field. As an attorney authorized to serve as a receiver in enforcement cases, I know employment law from the inside - both from the employees' side and the employers' side.",
+      "I understand that facing your employer is a sensitive and complex moment. I'm here for you the whole way through - answering every question, walking you through every stage, and providing personal, hands-on guidance from our first meeting to the full realization of your rights. You are not alone in this.",
     items: [
       { slug: "labor", title: "Wrongful Termination", blurb: "Claiming and securing full compensation for dismissals that did not meet legal requirements.", imageAlt: "Wrongful termination" },
       { slug: "civil", title: "Employee Representation", blurb: "Professional representation of employees in any legal proceeding against their employer - including wage claims, severance, and social benefits.", imageAlt: "Employee representation" },
-      { slug: "hearing", title: "Pre-Dismissal Hearing Representation", blurb: "Guidance and representation in pre-dismissal hearings - thorough preparation, presence at the hearing, and defense of your rights.", imageAlt: "Pre-dismissal hearing" },
+      { slug: "hearing", title: "Pre-Dismissal Hearing Representation", blurb: "Guidance and representation throughout the pre-dismissal hearing process - thorough preparation, presence at the hearing, and defense of your rights. You'll arrive at the hearing fully prepared.", imageAlt: "Pre-dismissal hearing" },
       { slug: "harassment", title: "Abusive Employment & Workplace Harassment", blurb: "Handling claims against employers for harassment, bullying, discrimination, and abusive working conditions.", imageAlt: "Workplace harassment" },
       { slug: "injunction", title: "Injunctions", blurb: "Filing urgent requests for injunctions against wrongful dismissals or violations of employee rights.", imageAlt: "Injunctions" },
       { slug: "rights", title: "Maximizing Your Rights", blurb: "Comprehensive review and full realization of all social benefits throughout your entire employment period.", imageAlt: "Maximizing rights" },
@@ -78,7 +78,7 @@ export const en: Dictionary = {
   },
   spotlight: {
     headline: "Helping you realize the rights you are owed",
-    body: "After five years managing complex cases at Israel's leading law firms, I know employment law from the inside. I bring the same strategic knowledge and high standards - without the distance and bureaucracy of a large firm.",
+    body: "Years of experience managing complex cases at Israel's leading law firms - representing both employers and employees. I know employment law from the inside, and I bring the same strategic knowledge and high standards, without the distance and bureaucracy of a large firm.",
     ctaLabel: "Book a Consultation",
   },
   testimonials: {
@@ -91,7 +91,7 @@ export const en: Dictionary = {
       { quote: "A foreign worker employed for 4 years at a large construction corporation. A comprehensive audit of the pay slips and attendance records revealed systematic errors in overtime and travel pay. The case ended in a settlement of ₪180,000, including a top-up of pension contributions.", author: "M.S.", caseType: "Foreign worker at construction corporation - wage rights", imageSlug: "construction-worker" },
       { quote: "An accountant dismissed after 7 years without a hearing and without written reasoning. The Regional Labor Court awarded compensation of 12 months' salary for wrongful termination, plus full severance and accrued vacation - a total of ₪245,000.", author: "M.B.", caseType: "Wrongful termination", imageSlug: "wrongful-dismissal" },
       { quote: "A truck driver who was not paid overtime for two and a half years. After a mediation process he received ₪95,000, covering wage arrears, statutory-violation damages and training-fund reimbursement.", author: "Y.G.", caseType: "Overtime and wage supplements", imageSlug: "truck-driver" },
-      { quote: "An administrative assistant at a large firm who experienced harassment and bullying by her direct manager. We filed a claim for sexual harassment, workplace abuse and hostile environment. The matter settled at ₪220,000 with no admission of liability and no harm to her career.", author: "S.L.", caseType: "Workplace abuse and harassment", imageSlug: "office-harassment" },
+      { quote: "A senior employee at a large firm who endured ongoing workplace abuse from her direct manager after reporting internal irregularities. We filed a claim for workplace abuse, breach of good-faith duty and breach of the employment contract. The matter settled at ₪220,000 with a guarantee of a clean working track and no harm to her professional standing.", author: "S.L.", caseType: "Workplace abuse and rights violations", imageSlug: "office-harassment" },
       { quote: "A software engineer summoned to a pre-dismissal hearing after 6 years of service. We represented him at the hearing, presented legal arguments and evidence to rebut the claims, and the employer withdrew the intent to dismiss. The employee was fully reinstated with continuity of rights.", author: "R.S.", caseType: "Hearing representation - dismissal reversed", imageSlug: "hearing-representation" },
       { quote: "A production worker discovered the employer had failed to pay pension contributions for 5 years. In the claim filed with the Labor Court, the court ordered full restitution of all contributions plus interest and linkage, and an additional ₪72,000 for breach of the employment contract.", author: "D.C.", caseType: "Pension rights realization", imageSlug: "pension-rights" },
     ],
@@ -131,14 +131,14 @@ export const en: Dictionary = {
     eyebrow: "Why Me",
     heading: "Why me?",
     paragraphs: [
-      "After five years managing complex cases at Israel's leading law firms, I know employment law from the inside.",
+      "After years of managing complex cases at Israel's leading law firms - representing both employers and employees - I know employment law from the inside.",
       "I bring the same strategic knowledge and the highest standards - without the distance and bureaucracy of a large firm.",
     ],
     cards: [
-      { n: "01", title: "Big-firm caliber", body: "After five years managing complex cases at Israel's leading law firms, I know employment law from the inside. I bring the same strategic knowledge and high standards, without the distance and bureaucracy of a large firm." },
+      { n: "01", title: "Big-firm caliber", body: "Years of managing complex cases at Israel's leading law firms - representing both employers and employees. I bring the same strategic knowledge and high standards, without the distance and bureaucracy of a large firm." },
       { n: "02", title: "360° strategy", body: "I have represented both employers and employees. That experience lets me read the map ahead of time, anticipate your employer's moves, and build a strategy that neutralizes their defenses before they're even raised." },
       { n: "03", title: "Personal availability", body: "I personally handle every case from start to finish - speaking with you directly, available for questions, and updating you at every stage. No interns fill in for me, no automated handling. You work directly with me and receive all the attention your case requires." },
-      { n: "04", title: "Transparent, fair fees", body: "At our first meeting we'll agree on a clear fee structure - sometimes success-based - so you know exactly what you're paying and why. No surprises, no hidden line items, just a mutual commitment to succeed together." },
+      { n: "04", title: "Transparent, fair fees", body: "At our first meeting we'll agree on a clear fee structure - so you know exactly what you're paying and why. No surprises, no hidden line items, just a mutual commitment to succeed together." },
       { n: "05", title: "Results that speak for themselves", body: "Dozens of employees have already received the full rights they were owed - severance, overtime, pension and deductions - thanks to determined, professional representation. My work is measured in real results, not promises." },
     ],
     prev: "Previous",
@@ -147,7 +147,7 @@ export const en: Dictionary = {
   },
   knowFirsthand: {
     eyebrow: "I Know This Firsthand",
-    body: "Speaking to the heart of the problem - many employees are unaware of the rights they hold. I believe that behind every legal case stands a person, a family, or a business who needs not just professional knowledge, but someone who will fight for them with determination and see the full picture.",
+    body: "Many employees are unaware of the rights they hold. I believe that behind every legal case stands a person, a family, or a business who needs not just professional knowledge, but someone who will fight for them with determination and see the full picture.",
   },
   footer: {
     legal: "Site Terms | Privacy Policy",
