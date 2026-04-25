@@ -39,7 +39,7 @@ function buildHtml(input: QuizInput): string {
     <h2 style="color:#1F2A44;margin:0 0 12px">פנייה חדשה משאלון סינון</h2>
     <p><strong>שם:</strong> ${esc(input.name)}</p>
     <p><strong>טלפון:</strong> ${esc(input.phone)}</p>
-    <p><strong>אימייל:</strong> ${esc(input.email)}</p>
+    <p><strong>אימייל:</strong> ${esc(input.email ?? "")}</p>
     <hr style="border:none;border-top:1px solid #1F2A44;margin:16px 0">
     <h3 style="color:#1F2A44;margin:0 0 8px">תשובות השאלון</h3>
     <p><strong>מצב נוכחי:</strong> ${esc(SITUATION_LABEL[input.situation])}</p>
@@ -50,7 +50,7 @@ function buildHtml(input: QuizInput): string {
 }
 
 function buildText(input: QuizInput): string {
-  return `פנייה חדשה משאלון סינון\n\nשם: ${input.name}\nטלפון: ${input.phone}\nאימייל: ${input.email}\n\nמצב נוכחי: ${SITUATION_LABEL[input.situation]}\nשימוע: ${HEARING_LABEL[input.hearing]}\nותק: ${TENURE_LABEL[input.tenure]}\nעיקר הבעיה: ${ISSUE_LABEL[input.issue]}`;
+  return `פנייה חדשה משאלון סינון\n\nשם: ${input.name}\nטלפון: ${input.phone}\nאימייל: ${input.email ?? "(לא סופק)"}\n\nמצב נוכחי: ${SITUATION_LABEL[input.situation]}\nשימוע: ${HEARING_LABEL[input.hearing]}\nותק: ${TENURE_LABEL[input.tenure]}\nעיקר הבעיה: ${ISSUE_LABEL[input.issue]}`;
 }
 
 export async function POST(req: Request) {
@@ -85,7 +85,7 @@ export async function POST(req: Request) {
   const { data: sent, error } = await client.emails.send({
     from,
     to,
-    replyTo: data.email,
+    ...(data.email ? { replyTo: data.email } : {}),
     subject: `שאלון סינון חדש - ${data.name}`,
     html: buildHtml(data),
     text: buildText(data),

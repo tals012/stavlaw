@@ -306,7 +306,7 @@ function ContactStep({
   const canSubmit =
     contact.name.trim().length >= 2 &&
     /^[0-9+\-\s()]{7,20}$/.test(contact.phone) &&
-    /.+@.+\..+/.test(contact.email) &&
+    (contact.email.trim().length === 0 || /.+@.+\..+/.test(contact.email)) &&
     consentLocation;
 
   return (
@@ -338,19 +338,21 @@ function ContactStep({
         <input
           type="tel"
           inputMode="tel"
+          dir="rtl"
           value={contact.phone}
           onChange={(e) => setContact({ ...contact, phone: e.target.value })}
           placeholder="טלפון*"
           aria-label="טלפון"
-          className="w-full bg-navy-mid border border-white/20 rounded-[14px] h-12 px-4 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-peach"
+          className="w-full bg-navy-mid border border-white/20 rounded-[14px] h-12 px-4 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-peach text-start"
         />
         <input
           type="email"
+          dir="rtl"
           value={contact.email}
           onChange={(e) => setContact({ ...contact, email: e.target.value })}
-          placeholder="אימייל*"
+          placeholder="אימייל"
           aria-label="אימייל"
-          className="w-full bg-navy-mid border border-white/20 rounded-[14px] h-12 px-4 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-peach"
+          className="w-full bg-navy-mid border border-white/20 rounded-[14px] h-12 px-4 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-peach text-start"
         />
       </div>
       <div className="mt-5 space-y-2.5">

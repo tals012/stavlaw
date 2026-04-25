@@ -11,7 +11,12 @@ export const quizSchema = z.object({
   issue: z.enum(["wages_overtime", "pension_benefits", "harassment", "wrongful_dismissal", "other"]),
   name: z.string().trim().min(2, "שם קצר מדי").max(80),
   phone: z.string().trim().regex(/^[0-9+\-\s()]{7,20}$/, "מספר טלפון לא תקין"),
-  email: z.string().trim().email("אימייל לא תקין"),
+  email: z
+    .string()
+    .trim()
+    .transform((v) => (v === "" ? undefined : v))
+    .pipe(z.string().email("אימייל לא תקין").optional())
+    .optional(),
   consentLocation: z.literal(true, { message: "יש לאשר" }),
   consentMarketing: z.boolean().optional(),
   honeypot: z.string().max(0).optional(),
