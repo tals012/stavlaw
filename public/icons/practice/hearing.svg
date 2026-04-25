@@ -1,0 +1,19 @@
+<svg width="1254" height="1254" viewBox="0 0 1254 1254" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="pre-dismissal hearing icon">
+  <title>pre-dismissal hearing icon</title>
+  <defs>
+    <style>
+      .s { fill: none; stroke: #F8C9B1; stroke-width: 34; stroke-linecap: round; stroke-linejoin: round; }
+      .f { fill: #F8C9B1; stroke: none; }
+    </style>
+  </defs>
+  <path class="s" d="M380 300H720L825 405V560"/>
+  <path class="s" d="M720 300V405H825"/>
+  <path class="s" d="M445 382H610"/>
+  <path class="s" d="M445 455H665"/>
+  <path class="s" d="M710 515H805"/>
+  <path class="s" d="M705 575H820C850 575 875 600 875 630V765C875 795 850 820 820 820H640"/>
+  <path class="s" d="M745 575V535C745 512 764 493 787 493H820C843 493 862 512 862 535V575"/>
+  <path class="s" d="M505 508L665 805H345L505 508Z"/>
+  <path class="s" d="M505 605V690"/>
+  <circle class="f" cx="505" cy="750" r="18"/>
+</svg>

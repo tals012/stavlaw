@@ -1,0 +1,19 @@
+<svg width="1254" height="1254" viewBox="0 0 1254 1254" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="rights realization icon">
+  <title>rights realization icon</title>
+  <defs>
+    <style>
+      .s { fill: none; stroke: #F8C9B1; stroke-width: 34; stroke-linecap: round; stroke-linejoin: round; }
+      .f { fill: #F8C9B1; stroke: none; }
+    </style>
+  </defs>
+  <path class="s" d="M335 470H915"/>
+  <path class="s" d="M625 470V785"/>
+  <path class="s" d="M625 405C680 405 715 442 715 500V650C715 712 675 748 625 748C575 748 535 712 535 650V500C535 442 570 405 625 405Z"/>
+  <path class="s" d="M550 475V390"/>
+  <path class="s" d="M610 470V375"/>
+  <path class="s" d="M670 475V395"/>
+  <path class="s" d="M400 470L310 650H490L400 470Z"/>
+  <path class="s" d="M310 650C345 705 455 705 490 650"/>
+  <path class="s" d="M850 470L760 650H940L850 470Z"/>
+  <path class="s" d="M760 650C795 705 905 705 940 650"/>
+</svg>

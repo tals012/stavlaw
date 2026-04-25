@@ -11,12 +11,12 @@ type Area = {
 };
 
 const ICON_BY_SLUG: Record<string, string> = {
-  labor: "/icons/practice/labor.png",
-  civil: "/icons/practice/civil.png",
-  hearing: "/icons/practice/hearing.png",
-  harassment: "/icons/practice/harassment.png",
-  injunction: "/icons/practice/injunction.png",
-  rights: "/icons/practice/rights.png",
+  labor: "/icons/practice/labor.svg",
+  civil: "/icons/practice/civil.svg",
+  hearing: "/icons/practice/hearing.svg",
+  harassment: "/icons/practice/harassment.svg",
+  injunction: "/icons/practice/injunction.svg",
+  rights: "/icons/practice/rights.svg",
 };
 
 export function PracticeAreaCard({ area, index }: { area: Area; index: number }) {

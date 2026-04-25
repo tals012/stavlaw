@@ -1,0 +1,14 @@
+<svg width="1254" height="1254" viewBox="0 0 1254 1254" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="employee representation icon">
+  <title>employee representation icon</title>
+  <defs>
+    <style>
+      .s { fill: none; stroke: #F8C9B1; stroke-width: 34; stroke-linecap: round; stroke-linejoin: round; }
+      .f { fill: #F8C9B1; stroke: none; }
+    </style>
+  </defs>
+  <circle class="s" cx="530" cy="400" r="82"/>
+  <path class="s" d="M355 765V695C355 595 432 528 530 528C628 528 705 595 705 695V765"/>
+  <path class="s" d="M505 532L485 612L530 690L575 612L555 532"/>
+  <path class="s" d="M815 340L928 390V535C928 635 868 706 815 735C762 706 702 635 702 535V390L815 340Z"/>
+  <path class="s" d="M765 525L805 565L875 485"/>
+</svg>
