@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Script } from "@/components/ui/Script";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
-import caseStudy from "@/figma-assets/case-study.jpg";
+import caseStudyFallback from "@/figma-assets/case-study.jpg";
 
 export function Testimonials() {
   const { dict } = useLocale();
@@ -12,19 +12,17 @@ export function Testimonials() {
   const items = t.items;
   const [i, setI] = useState(0);
 
-  // RTL: go(1) = next (shift container leftward in LTR = rightward in RTL)
   const go = (d: -1 | 1) => setI((prev) => (prev + d + items.length) % items.length);
 
   return (
-    <section id="testimonials" className="bg-cream-100 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-
+    <section id="testimonials" className="bg-cream-100 py-14 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
         {/* Section heading */}
-        <div className="text-center mb-14">
-          <Script className="text-[clamp(2.5rem,4vw,64px)] leading-none block mb-3">
+        <div className="text-center mb-8 md:mb-14">
+          <Script className="text-[clamp(2rem,4vw,64px)] leading-none block mb-3">
             {t.eyebrow}
           </Script>
-          <h2 className="text-[clamp(2rem,3.5vw,55px)] font-bold text-navy leading-[1.22]">
+          <h2 className="text-[clamp(1.5rem,3.5vw,55px)] font-bold text-navy leading-[1.22]">
             {t.heading}
           </h2>
         </div>
@@ -35,69 +33,94 @@ export function Testimonials() {
             className="flex transition-transform duration-500 ease-out"
             style={{ transform: `translateX(${i * 100}%)` }}
           >
-            {items.map((item, idx) => (
-              <article
-                key={idx}
-                className="w-full shrink-0 bg-navy rounded-[20px] grid grid-cols-1 md:grid-cols-[1fr_380px] overflow-hidden"
-              >
-                {/* Case text - FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
-                <div className="p-10 flex flex-col justify-center gap-4">
-                  <div>
-                    <p className="text-peach text-[22px] font-bold">{item.author} |</p>
-                    <p className="text-peach text-[20px] font-bold">{item.caseType}</p>
+            {items.map((item, idx) => {
+              const src = item.imageSlug
+                ? `/case-studies/${item.imageSlug}.jpg`
+                : caseStudyFallback;
+              return (
+                <article
+                  key={idx}
+                  className="w-full shrink-0 bg-navy rounded-[20px] grid grid-cols-1 md:grid-cols-[1fr_380px] overflow-hidden"
+                >
+                  {/* Photo - mobile first (top), desktop visual-LEFT (DOM second) */}
+                  <div className="relative h-[200px] md:h-auto md:min-h-[440px] md:order-2">
+                    <Image
+                      src={src}
+                      alt={item.caseType}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 380px"
+                      className="object-cover grayscale"
+                    />
+                    <div className="absolute inset-0 bg-navy/30" />
                   </div>
-                  <div className="w-full h-px bg-white/20" />
-                  <p className="text-white text-[18px] leading-[1.5]">
-                    &quot;{item.quote}&quot;
-                  </p>
-                </div>
 
-                {/* Photo - SECOND in DOM → visual LEFT in RTL */}
-                <div className="relative min-h-[300px] md:min-h-[440px]">
-                  <Image
-                    src={caseStudy}
-                    alt={item.caseType}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className="object-cover grayscale"
-                  />
-                  <div className="absolute inset-0 bg-navy/30" />
-                </div>
-              </article>
-            ))}
+                  {/* Case text */}
+                  <div className="p-6 md:p-10 flex flex-col justify-center gap-3 md:gap-4 md:order-1">
+                    <div>
+                      <p className="text-peach text-[17px] md:text-[22px] font-bold leading-tight">
+                        {item.author} |
+                      </p>
+                      <p className="text-peach text-[15px] md:text-[20px] font-bold leading-snug mt-1">
+                        {item.caseType}
+                      </p>
+                    </div>
+                    <div className="w-full h-px bg-white/20" />
+                    <p className="text-white text-[14px] md:text-[18px] leading-[1.55]">
+                      &quot;{item.quote}&quot;
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
-          {/* Prev arrow (in RTL layout: visual right = "previous") */}
+          {/* Desktop arrows (hidden on mobile) */}
           <button
             onClick={() => go(-1)}
             aria-label={t.prev}
-            className="absolute top-1/2 -translate-y-1/2 end-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy flex items-center justify-center text-2xl font-bold hover:bg-peach hover:text-white transition-colors shadow-md"
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 end-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy items-center justify-center text-2xl font-bold hover:bg-peach hover:text-white transition-colors shadow-md"
           >
             ›
           </button>
-
-          {/* Next arrow (visual left = "next" in RTL) */}
           <button
             onClick={() => go(1)}
             aria-label={t.next}
-            className="absolute top-1/2 -translate-y-1/2 start-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy flex items-center justify-center text-2xl font-bold hover:bg-peach hover:text-white transition-colors shadow-md"
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 start-4 z-10 w-10 h-10 rounded-full bg-cream-100/90 text-navy items-center justify-center text-2xl font-bold hover:bg-peach hover:text-white transition-colors shadow-md"
           >
             ‹
           </button>
         </div>
 
-        {/* Pagination dots */}
-        <div className="mt-6 flex justify-center gap-3">
-          {items.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setI(idx)}
-              aria-label={t.slideLabel(idx + 1)}
-              className={`h-2.5 rounded-full transition-all ${
-                idx === i ? "w-6 bg-peach" : "w-2.5 bg-cream-200"
-              }`}
-            />
-          ))}
+        {/* Controls row: arrows (mobile) + dots */}
+        <div className="mt-5 md:mt-6 flex items-center justify-center gap-3">
+          <button
+            onClick={() => go(-1)}
+            aria-label={t.prev}
+            className="md:hidden w-9 h-9 rounded-full bg-navy/90 text-cream-100 flex items-center justify-center text-xl font-bold hover:bg-peach hover:text-navy transition-colors shadow"
+          >
+            ›
+          </button>
+
+          <div className="flex justify-center gap-2">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setI(idx)}
+                aria-label={t.slideLabel(idx + 1)}
+                className={`h-2.5 rounded-full transition-all ${
+                  idx === i ? "w-6 bg-peach" : "w-2.5 bg-cream-200"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => go(1)}
+            aria-label={t.next}
+            className="md:hidden w-9 h-9 rounded-full bg-navy/90 text-cream-100 flex items-center justify-center text-xl font-bold hover:bg-peach hover:text-navy transition-colors shadow"
+          >
+            ‹
+          </button>
         </div>
       </div>
     </section>

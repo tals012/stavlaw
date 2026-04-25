@@ -7,7 +7,7 @@ export type PracticeAreaEntry = {
 
 export type FAQEntry = { q: string; a: string };
 
-export type TestimonialEntry = { quote: string; author: string; caseType: string };
+export type TestimonialEntry = { quote: string; author: string; caseType: string; imageSlug?: string };
 
 export type ProcessStepEntry = { n: number; title: string; blurb: string };
 
