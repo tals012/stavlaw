@@ -19,6 +19,7 @@ export function Nav() {
     { href: "#testimonials", label: dict.nav.testimonials },
     { href: "#why-me", label: dict.nav.whyMe },
     { href: "#faq", label: dict.nav.faq },
+    { href: "/blog", label: dict.nav.blog },
     { href: "#contact", label: dict.nav.contact },
   ];
 
@@ -37,8 +38,14 @@ export function Nav() {
   }, [mobileOpen]);
 
   const onNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
     const href = e.currentTarget.getAttribute("href") ?? "";
+    if (!href.startsWith("#")) {
+      // Real URL — let the browser navigate normally.
+      document.body.style.overflow = "";
+      setMobileOpen(false);
+      return;
+    }
+    e.preventDefault();
     const id = href.replace(/^#/, "");
     const el = document.getElementById(id);
     document.body.style.overflow = "";

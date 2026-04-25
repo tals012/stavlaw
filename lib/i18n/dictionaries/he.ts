@@ -8,6 +8,7 @@ export const he: Dictionary = {
     testimonials: "דוגמאות מהעולם האמיתי",
     whyMe: "למה אני?",
     faq: "שאלות נפוצות",
+    blog: "בלוג",
     contact: "יצירת קשר",
     homeAria: "עמוד הבית",
   },

@@ -8,6 +8,7 @@ export const en: Dictionary = {
     testimonials: "Real Cases",
     whyMe: "Why Me?",
     faq: "FAQ",
+    blog: "Blog",
     contact: "Contact",
     homeAria: "Home",
   },

@@ -19,6 +19,7 @@ export type Dictionary = {
     testimonials: string;
     whyMe: string;
     faq: string;
+    blog: string;
     contact: string;
     homeAria: string;
   };

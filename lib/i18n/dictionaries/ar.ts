@@ -8,6 +8,7 @@ export const ar: Dictionary = {
     testimonials: "أمثلة من الواقع",
     whyMe: "لماذا أنا؟",
     faq: "الأسئلة الشائعة",
+    blog: "المدونة",
     contact: "تواصل معي",
     homeAria: "الصفحة الرئيسية",
   },

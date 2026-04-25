@@ -8,6 +8,7 @@ export const ru: Dictionary = {
     testimonials: "Примеры из практики",
     whyMe: "Почему я?",
     faq: "Часто задаваемые вопросы",
+    blog: "Блог",
     contact: "Контакты",
     homeAria: "Главная",
   },
