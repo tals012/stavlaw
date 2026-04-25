@@ -8,8 +8,8 @@ export function AboutBrief() {
   const { dict } = useLocale();
 
   return (
-    <section id="about" className="bg-cream-100 py-20">
-      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1.8fr_1fr]">
+    <section id="about" className="bg-cream-100 pt-8 pb-14 md:py-20">
+      <div className="mx-auto grid max-w-6xl items-start gap-8 px-6 md:gap-12 md:grid-cols-[1.8fr_1fr]">
 
         {/* Bio - FIRST in DOM → visual RIGHT in RTL (default text-align: start = right) */}
         <div className="py-4">
