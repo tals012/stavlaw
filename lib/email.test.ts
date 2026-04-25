@@ -5,7 +5,7 @@ describe("sendContactEmail", () => {
   it("calls resend.emails.send with expected shape", async () => {
     const send = vi.fn().mockResolvedValue({ data: { id: "e_1" }, error: null });
     const r = await sendContactEmail(
-      { name: "דנה", phone: "0555555555", email: "d@x.com", message: "שלום" },
+      { name: "דנה", phone: "0555555555", email: "d@x.com", message: "שלום", consentLocation: true },
       { client: { emails: { send } }, to: "s@stavlaw.co.il", from: "noreply@stavlaw.co.il" }
     );
     expect(r.ok).toBe(true);
