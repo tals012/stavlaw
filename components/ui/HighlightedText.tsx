@@ -44,18 +44,12 @@ export function DwellHighlight({
       return;
     }
 
-    if (typeof IntersectionObserver === "undefined") {
-      setActive(true);
-      return;
-    }
-
     let timeoutId: number | undefined;
     let activated = false;
 
     const isInView = () => {
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
-      // Consider "in view" when the block is at least 40% intersected.
       const visible = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
       const ratio = rect.height > 0 ? visible / rect.height : 0;
       return ratio >= 0.4;
@@ -94,7 +88,6 @@ export function DwellHighlight({
     io.observe(el);
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Kick once on mount in case we're already in view and the IO entry is lazy.
     if (isInView()) startTimer();
 
     function cleanup() {
@@ -117,9 +110,10 @@ export function DwellHighlight({
 
 /**
  * Renders a string that may contain `**marked**` segments. Each marked
- * segment becomes a Mark whose text animates to bold (color is
- * inherited from the surrounding paragraph) once the parent
- * <DwellHighlight/> has decided enough dwell time has passed.
+ * segment animates word-by-word from its surrounding weight to bold,
+ * via a per-word crossfade (since CSS can't smoothly animate
+ * font-weight on non-variable fonts). The result is a "filling in"
+ * sweep across the phrase once the dwell threshold has passed.
  */
 export function HighlightedText({
   text,
@@ -129,24 +123,48 @@ export function HighlightedText({
   className?: string;
 }) {
   const segments = parseMarkers(text);
-  let markIndex = 0;
+  let wordOffset = 0;
   return (
     <span className={className}>
       {segments.map((seg, i) => {
         if (seg.type === "text") return <span key={i}>{seg.value}</span>;
-        const idx = markIndex++;
-        return (
-          <Mark key={i} delay={0.18 + idx * 0.22}>
-            {seg.value}
-          </Mark>
-        );
+        const start = wordOffset;
+        const words = seg.value.split(" ").filter(Boolean);
+        wordOffset += words.length;
+        return <Mark key={i} words={words} startIndex={start} />;
       })}
     </span>
   );
 }
 
-function Mark({ children, delay }: { children: ReactNode; delay: number }) {
+function Mark({ words, startIndex }: { words: string[]; startIndex: number }) {
   const active = useContext(DwellContext);
+  return (
+    <>
+      {words.map((word, i) => (
+        <WordSwap
+          key={`${startIndex}-${i}`}
+          word={word}
+          active={active}
+          delay={(startIndex + i) * 0.06}
+          isLast={i === words.length - 1}
+        />
+      ))}
+    </>
+  );
+}
+
+function WordSwap({
+  word,
+  active,
+  delay,
+  isLast,
+}: {
+  word: string;
+  active: boolean;
+  delay: number;
+  isLast: boolean;
+}) {
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
@@ -156,9 +174,33 @@ function Mark({ children, delay }: { children: ReactNode; delay: number }) {
   }, [active, delay]);
 
   return (
-    <span style={shown ? { fontWeight: 700 } : undefined}>
-      {children}
-    </span>
+    <>
+      <span className="relative inline-block whitespace-nowrap align-baseline">
+        {/* Sizing layer: bold (always present so the box stays bold-wide) */}
+        <span
+          className="font-bold"
+          aria-hidden={!shown}
+          style={{
+            opacity: shown ? 1 : 0,
+            transition: "opacity 550ms cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+        >
+          {word}
+        </span>
+        {/* Regular layer: fades out as bold reveals */}
+        <span
+          aria-hidden={shown}
+          className="absolute inset-0"
+          style={{
+            opacity: shown ? 0 : 1,
+            transition: "opacity 550ms cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+        >
+          {word}
+        </span>
+      </span>
+      {!isLast && " "}
+    </>
   );
 }
 
