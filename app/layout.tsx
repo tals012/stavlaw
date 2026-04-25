@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { GoogleAnalytics } from "@/lib/analytics";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import { AccessibilityWidget } from "@/components/ui/AccessibilityWidget";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import "./globals.css";
 
 // Google Sans - self-hosted from /fonts/google-sans (proprietary, user-supplied)
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LocaleProvider>
           {children}
           <AccessibilityWidget />
+          <CookieBanner />
           <Toaster richColors position="top-center" dir="rtl" />
         </LocaleProvider>
         <GoogleAnalytics />
