@@ -178,8 +178,8 @@ export function ContactForm() {
                 אני מאשר/ת קבלת דיוור ומידע פרסומי ואת תנאי השימוש ו־מדיניות הפרטיות באתר.
               </span>
             </label>
-            {(errors.consentLocation || errors.consentMarketing) && (
-              <p className="text-sm text-red-400">יש לאשר את שני התנאים</p>
+            {errors.consentLocation && (
+              <p className="text-sm text-red-400">יש לאשר את התנאי</p>
             )}
           </div>
 

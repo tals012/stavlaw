@@ -307,8 +307,7 @@ function ContactStep({
     contact.name.trim().length >= 2 &&
     /^[0-9+\-\s()]{7,20}$/.test(contact.phone) &&
     /.+@.+\..+/.test(contact.email) &&
-    consentLocation &&
-    consentMarketing;
+    consentLocation;
 
   return (
     <div>

@@ -13,7 +13,7 @@ export const quizSchema = z.object({
   phone: z.string().trim().regex(/^[0-9+\-\s()]{7,20}$/, "מספר טלפון לא תקין"),
   email: z.string().trim().email("אימייל לא תקין"),
   consentLocation: z.literal(true, { errorMap: () => ({ message: "יש לאשר" }) }),
-  consentMarketing: z.literal(true, { errorMap: () => ({ message: "יש לאשר" }) }),
+  consentMarketing: z.boolean().optional(),
   honeypot: z.string().max(0).optional(),
 });
 
