@@ -35,13 +35,13 @@ export function PracticeAreaCard({ area, index }: { area: Area; index: number })
       whileHover={{ y: -6 }}
       className="group bg-navy-mid rounded-2xl p-7 border border-white/5 transition-colors duration-300 hover:border-peach/45 hover:bg-[color-mix(in_oklab,var(--color-navy-mid),var(--color-peach)_6%)]"
     >
-      <div className="w-[120px] h-[120px] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+      <div className="w-[96px] h-[96px] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
         {iconSrc ? (
           <Image
             src={iconSrc}
             alt={area.imageAlt}
-            width={120}
-            height={120}
+            width={96}
+            height={96}
             className="w-full h-full object-contain"
           />
         ) : null}
